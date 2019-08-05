@@ -20,7 +20,7 @@
   src: url("../font/NotoSansKR-Regular.eot");
   src: local("※"), url("../font/NotoSansKR-Regular.woff2") format("woff2"), url("../font/NotoSansKR-Regular.woff") format("woff"), url("../font/NotoSansKR-Regular.otf") format("opentype"); }
 /* tag reset */
-body, ul, div, a, button, h1, h2, h3, p {
+body, ul, div, a, button, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0; }
 
@@ -69,6 +69,9 @@ body {
 /* content */
 html, body, #content, .wrap {
   height: 100%; }
+
+body {
+  overflow: hidden; }
 
 .area {
   margin: 0 160px; }
@@ -151,6 +154,99 @@ html, body, #content, .wrap {
 #gnb ul li.on a:before {
   display: inline-block; }
 
+#indicator ul li.on a {
+  width: 50px;
+  background: #ffb329;
+  margin-left: 0; }
+
+#content .wrap > div {
+  margin-top: -70px;
+  height: calc(100% / 3); }
+  #content .wrap > div .title.area {
+    width: 880px;
+    border-bottom: 1px solid #ffb329;
+    position: relative;
+    top: 50%;
+    padding-bottom: 15px;
+    position: relative; }
+  #content .wrap > div h3, #content .wrap > div span {
+    color: #ffb329; }
+  #content .wrap > div a {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding-left: 70px; }
+  #content .wrap > div h3 {
+    font-family: monM;
+    font-size: 70px;
+    letter-spacing: -1.4px;
+    display: inline-block; }
+  #content .wrap > div span {
+    letter-spacing: -0.4px; }
+  #content .wrap > div .sub_title {
+    font-size: 15px; }
+  #content .wrap > div .num {
+    position: absolute;
+    font-size: 20px; }
+
+#content #bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -100; }
+  #content #bg img {
+    position: absolute;
+    transition: all 0.7s;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(0.95); }
+    #content #bg img.selected {
+      opacity: 0.9;
+      transform: scale(1); }
+
+#content .wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  margin-left: 1%; }
+
+#content .wrap .project {
+  transition: opaicty, padding 1s; }
+
+#content .wrap .project.selected {
+  padding-left: 10%; }
+
+#content .project.selected {
+  color: #ffb329; }
+
+#content .project .wrap > div {
+  opacity: 0; }
+
+#content .project .wrap > .title {
+  opacity: 1; }
+
+#content .project {
+  color: #ccc; }
+
+#content #cnt1 .sub_title {
+  padding-left: 70px; }
+
+#content #cnt2 .sub_title {
+  padding-left: 254px; }
+
+#content #cnt3 .sub_title {
+  padding-left: 147px; }
+
+#content #cnt4 .sub_title {
+  padding-left: 108px; }
+
 /* footer */
 #footer {
   color: #fff;
@@ -208,174 +304,5 @@ html, body, #content, .wrap {
       height: 1px;
       margin-left: 25px;
       background: #fff; }
-
-#indicator ul li.on a {
-  width: 50px;
-  background: #ffb329;
-  margin-left: 0; }
-
-#content .wrap > div {
-  margin-top: -70px;
-  height: calc(100% / 3); }
-  #content .wrap > div .title.area {
-    width: 880px;
-    border-bottom: 1px solid #ffb329;
-    position: relative;
-    top: 50%;
-    padding-bottom: 15px;
-    position: relative; }
-  #content .wrap > div h3, #content .wrap > div span {
-    color: #ffb329; }
-  #content .wrap > div a {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    padding-left: 70px; }
-  #content .wrap > div h3 {
-    font-family: monM;
-    font-size: 70px;
-    letter-spacing: -1.4px;
-    display: inline-block; }
-  #content .wrap > div span {
-    letter-spacing: -0.4px; }
-  #content .wrap > div .sub_title {
-    font-size: 15px; }
-  #content .wrap > div .num {
-    position: absolute;
-    font-size: 20px; }
-
-#content #bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  left: 0;
-  z-index: -100; }
-  #content #bg img {
-    position: absolute;
-    transition: all 0.7s;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform: scale(0.95); }
-
-#content #bg img.selected {
-  opacity: 0.1;
-  transform: scale(1); }
-
-#content .wrap {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  margin-left: 1%; }
-
-#content .wrap .project {
-  transition: opaicty, padding 1s; }
-
-#content .wrap .project.selected {
-  padding-left: 10%; }
-
-#content .project.selected {
-  color: #ffb329; }
-
-#content .project .wrap > div {
-  opacity: 0; }
-
-#content .project .wrap > .title {
-  opacity: 1; }
-
-#content .project {
-  color: #ccc; }
-
-#content #cnt1 .sub_title {
-  padding-left: 70px; }
-
-#content #cnt2 .sub_title {
-  padding-left: 254px; }
-
-#content #cnt3 .sub_title {
-  padding-left: 147px; }
-
-#content #cnt4 .sub_title {
-  padding-left: 108px; }
-
-/* sub1 */
-#content #cnt1 {
-  background: url("../images/main/index3.jpg") no-repeat 0 center;
-  margin-top: -70px;
-  height: auto;
-  color: #fff; }
-  #content #cnt1 .area {
-    width: 900px;
-    padding: 270px 0;
-    margin: auto 50%;
-    margin-left: 450px; }
-    #content #cnt1 .area .txt {
-      color: #ffb329;
-      border-bottom: 1px solid #fff;
-      padding-bottom: 35px; }
-      #content #cnt1 .area .txt h3 {
-        font-size: 70px; }
-      #content #cnt1 .area .txt span {
-        display: inline-block;
-        font-size: 18px;
-        font-family: monL;
-        float: right;
-        margin-top: -20px; }
-      #content #cnt1 .area .txt .subTit {
-        margin-left: 16%; }
-
-#content #cnt1 .box:after {
-  content: "";
-  display: block;
-  clear: both; }
-
-#content #cnt1 .box {
-  margin: 100px 115px;
-  box-sizing: border-bo; }
-
-#content #cnt1 .box ul {
-  float: left; }
-  #content #cnt1 .box ul li {
-    width: calc(670px / 3); }
-    #content #cnt1 .box ul li .size {
-      font-size: 20px; }
-
-#content #cnt1 .box ul .size:after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: #fff;
-  margin: 10px 0; }
-
-#content #cnt1 .siteLink {
-  text-align: center;
-  display: block;
-  width: 170px;
-  height: 40px;
-  line-height: 40px;
-  border: 1px solid #ffb329;
-  border-radius: 50px;
-  margin: auto;
-  transition: all 0.3s; }
-
-#content #cnt1 .siteLink:hover, #content #cnt1 .siteLink:focus {
-  background: #ffb329;
-  counter-reset: #fff; }
-
-/* 
-	.bgfix{height: 1000px;font-size:100px;border:1px solid red;background: no-repeat fixed center}
-
-		동일한 크기의 배경이미지를 만들고 background-attachment:fixed 로 주고 배경위치도 동일하게 처리함
-
-*/
-#content #cnt2 {
-  background-image: url("../images/sub1/1_1.jpg");
-  height: 1000px; }
 
 /*# sourceMappingURL=style.css.map */

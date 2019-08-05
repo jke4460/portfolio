@@ -1,3 +1,70 @@
+@charset "UTF-8";
+@font-face {
+  font-family: monEB;
+  src: url("../font/Montserrat-ExtraBold.eot");
+  src: local("※"), url("../font/Montserrat-ExtraBold.woff") format("woff"), url("../font/Montserrat-ExtraBold.otf") format("opentype"), url("../font/Montserrat-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: monR;
+  src: url("../font/Montserrat-Regular.eot");
+  src: local("※"), url("../font/Montserrat-Regular.woff") format("woff"), url("../font/Montserrat-Regular.otf") format("opentype"), url("../font/Montserrat-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: monM;
+  src: url("../font/Montserrat-Medium.eot");
+  src: local("※"), url("../font/Montserrat-Medium.woff") format("woff"), url("../font/Montserrat-Medium.otf") format("opentype"), url("../font/Montserrat-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: monL;
+  src: url("../font/Montserrat-Light.eot");
+  src: local("※"), url("../font/Montserrat-Light.woff") format("woff"), url("../font/Montserrat-Light.otf") format("opentype"), url("../font/Montserrat-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: notoR;
+  src: url("../font/NotoSansKR-Regular.eot");
+  src: local("※"), url("../font/NotoSansKR-Regular.woff2") format("woff2"), url("../font/NotoSansKR-Regular.woff") format("woff"), url("../font/NotoSansKR-Regular.otf") format("opentype"); }
+/* tag reset */
+body, ul, div, a, button, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0; }
+
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none; }
+
+a {
+  cursor: pointer; }
+
+img {
+  vertical-align: top;
+  border: none;
+  max-width: 100%;
+  height: auto; }
+
+button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
+header, section, div, nav, footer {
+  display: block; }
+
+.blind {
+  font-size: 0;
+  text-indent: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  line-height: -9999px; }
+
+body {
+  font-family: monR;
+  color: #303030; }
+
+/* sub1 */
 #content #cnt1 {
   background: url("../images/main/index3.jpg") no-repeat 0 center;
   margin-top: -70px;
@@ -62,8 +129,35 @@
   background: #ffb329;
   counter-reset: #fff; }
 
+#content .area h4, #content .area h5 {
+  display: inline-block; }
+
+#content .area .num {
+  font-family: monEB;
+  font-size: 150px;
+  color: #ffb329; }
+
+#content .area .cntTit {
+  font-family: monM;
+  font-size: 20px;
+  letter-spacing: -0.8px; }
+
+#content .area .num.right, #content .area .cntTit.right {
+  float: right; }
+
+#content .bgfix {
+  background: no-repeat fixed center; }
+
 #content #cnt2 {
-  background: #101420;
-  height: auto; }
+  background-image: url("../images/sub1/1_1.jpg");
+  height: 1000px; }
+  #content #cnt2 p {
+    font-size: 25px;
+    line-height: 53.4px;
+    font-family: notoR; }
+
+#content #cnt2_1 {
+  background-image: url("../images/sub1/1_2.jpg");
+  height: 1000px; }
 
 /*# sourceMappingURL=sub1.css.map */
