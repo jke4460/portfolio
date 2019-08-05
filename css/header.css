@@ -1,0 +1,107 @@
+/**Header**/
+.header .nom {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.header .retour-home svg {
+    display: none;
+}
+
+.header .contenant-infos {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    line-height: 20px;
+}
+
+.header .contenant-liens {
+    display: flex;
+}
+
+.header .contenant-liens .info {
+    display: inline;
+    font-size: 15px;
+    font-weight: 300;
+    color: #707893;
+}
+
+.header .contenant-liens .info:hover {
+    color: #00BC9C;
+}
+
+.header .contenant-liens .info-trait {
+    margin: 0 6px 0 6px;
+}
+
+.header .contenant-liens .lien-actif {
+    color: #00BC9C;
+}
+
+.header .contenant-liens .lien-actif .info-actif {
+    color: #00BC9C;
+}
+
+@media screen and (min-width: 700px) {   
+    .header .retour-home svg {
+        display: initial;
+        fill: #848ca5;
+        transition: 0.2s;
+    }
+
+    .header .retour-home svg:hover {
+        fill: #00BC9C;
+    }
+
+    .header .retour-home .svg-inactive {
+    opacity: 0.7;
+    }
+
+    .header .retour-home svg {
+        width: 19px;
+        margin-right: 15px;
+        margin-top: 9px;
+    }
+
+    .header .contenant-infos {
+        align-items: flex-start;
+    }
+}
+
+/**Header hover ligne chargement**/
+.header .contenant-underline {
+    position: relative;
+}
+
+.header .underline, .underline-loading {
+    transition: all 0.7s;
+    position: absolute;
+}
+
+.header .underline-loading {
+    border-bottom: 1px #00bc9c solid;
+    left: 0;
+    width: 0%;
+}
+
+.header .underline-actif {
+    border-bottom: 1px #00bc9c solid;
+    left: 0;
+    width: 100%;
+}
+
+.header .underline {
+    border-bottom: 1px #707893 solid;
+    right: 0;
+    width: 100%;
+}
+
+.header .lien-header:hover .underline-loading {
+    width: 100%;
+}
+
+.header .lien-header:hover .underline {
+    width: 0%;
+}

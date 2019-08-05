@@ -1,0 +1,88 @@
+.nav-bar ol {
+    list-style-type: none;
+    height: 100%;
+    min-width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.nav-bar ol > li {
+    flex: 1;
+    position: relative;
+}
+
+.nav-bar .ligne {
+    height: 1px;
+    width: 25px;
+    position: absolute;
+    right: 0;
+    background-color:#848ca5;
+    opacity: 0.7;
+    z-index: 1;
+    transition: all 0.4s;
+}
+
+.nav-bar .active {
+    width: 50px;
+    background-color: #00BC9C;
+}
+
+.nav-bar .nom-active {
+    color: #00BC9C;
+}
+
+.nav-bar .projet-infos {
+    display: flex;
+    transition: all 0.4s;
+    text-transform: lowercase;
+}
+
+.nav-bar .projet-infos > div > .nom-projet {
+    color: #707893;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+/* .nav-bar .hidden {
+    transform: translateX(100%);
+    opacity: 0;
+} */
+
+/* .nav-bar .projet-image {
+    height: 50px;
+    position: relative;
+} */
+
+/* .nav-bar .projet-image > img {
+    height: 100%;
+} */
+
+/* .nav-bar li:hover .ligne {
+    width: 125px;
+    opacity: 1;
+} */
+
+/* .nav-bar li:hover .projet-infos {
+    transform: translateX(0);
+    opacity: 1;
+} */
+
+/**Burger Menu**/
+.burger-menu {
+    height: 20px;
+    position: fixed;
+    right: 50px;
+}
+
+@media screen and (min-width: 1025px) {
+    .burger-menu {
+        display: none;
+    }
+}
+
+
+

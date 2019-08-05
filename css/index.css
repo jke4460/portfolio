@@ -1,0 +1,284 @@
+/* CSS DE LA HOME PAGE*/
+* {
+    box-sizing: content-box;
+}
+
+.pointer:hover {
+    cursor: pointer;
+} 
+
+html {
+    background-color: #30334c;
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+    background: none;
+}
+
+.main {
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+}
+
+.main .background {
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main .background img {
+    transition: all 0.7s;
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* margin: 1000px; */
+    transform: scale(0.95);
+    /* transform: rotate(10deg); */
+}
+
+.main .background img.selected {
+    opacity: 0.1;
+    /* margin: 0; */
+    transform: scale(1);
+    /* transform: rotate(0); */
+}
+
+.background .overlay {
+    background-color: #30334c;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.91;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main .projects {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    color: #707893;
+    margin-left: 1%;
+}
+
+.main .projects > div {
+    height: 33.33vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main .project .content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.main .project .content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+}
+
+.main .project .content > .titre {
+    opacity: 1;
+}
+
+.main .project {
+    color: #7078932f;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.main .project .titre > h1 {
+    display: flex;
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+.main .project .titre .petit {
+    padding-left: 10px;
+    font-size: 20px;
+    line-height: 0px;
+}
+
+.main .project .content .labels, .main .project .content .date {
+    display: none;
+}
+
+.main .project .underline {
+    width: 0%;
+    border-bottom: 1px solid;
+}
+
+.main .project.selected .underline {
+    width: 100%;
+    border-bottom: 1px solid;
+}
+
+.main .project .content .bouton {
+    min-width: 60px;
+    width: 100px;
+    border: 1px solid #707893;
+    background: none;
+    border-radius: 25px;
+    height: 30px;
+    color: white;
+    font-size: 12px;
+    line-height: 1;
+    transition: 0.1s;
+    display: none;
+}
+
+.main .projects .project.selected .content .bouton{
+    display: flex;
+}
+
+.main .project .bouton:hover {
+    background-color: #707991;
+}
+
+.main .project .bouton:hover svg {
+    fill: #272C3C;
+}
+
+.main .project .bouton svg{
+    fill: #707893;
+    height: 10px;
+}
+
+.main .project .bouton a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.main .projects .project {
+    transition: opacity, padding 1s;
+    width: 80vw;
+}
+
+.main .projects .project.selected {
+    padding-left: 10%;
+    min-width: 250px;
+    max-width: 750px;
+}
+
+.main .project.selected {
+    color: #00bc9c;
+}
+
+/**Header, nav & footer fixed sur la Home**/
+.header {
+    position: fixed;
+    height: 100px;
+    width: 100vw;
+    background-image: linear-gradient(#30334c, #30334c00);
+    z-index: 998;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.nav-bar {
+    position: fixed;
+    right: 0;
+    z-index: 999; 
+    /* images de la nav visibles */
+}
+
+.wrapper-footer {
+    position: initial;
+}
+
+.main .projects .project.selected .content .bouton {
+    opacity: 1;
+}
+
+.project:not(.selected) h1:hover{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+    .main .project .titre > h1 {
+        font-size: 70px;
+        line-height: 55px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .header {
+        padding-left: 50px;
+    }
+
+    .main .projects .project.selected .content > div {
+        opacity: 1;
+    }
+
+    .main .project .content .labels, .main .project .content .date  {
+        display: initial;
+        line-height: 16px;
+        font-size: 14px;
+        line-height: 1;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .main .project .titre > h1 {
+        font-size: 94px;
+        line-height: 70px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .main {
+        margin: 0;
+    }
+
+    .wrapper-nav {
+        padding-top: Calc(Calc(50vh - 100px) - 75px);
+    }
+
+    .wrapper-footer {
+        position: fixed;
+        right: 0;
+        z-index: 999;
+    }
+    
+}
+
+
+.projects {
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+    animation-delay: 0.3s;
+    animation-name: slideUp;
+    opacity: 0;
+    transform: translateY(50px);
+}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+  
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+  }
+
