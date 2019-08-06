@@ -1,4 +1,4 @@
-/* sub1 */
+/* sub1 garden */
 #content #cnt1 {
   background: url("../images/main/index3.jpg") no-repeat 0 center;
   margin-top: -70px;
@@ -43,12 +43,12 @@
 #content #cnt1 .fade.on {
   margin-bottom: 0px;
   opacity: 1;
-  filter: Alpha(100); }
+  filter: Alpha(opacity=100); }
 
 #content #cnt1 .fade {
   margin-bottom: -50px;
   opacity: 0;
-  filter: Alpha(0);
+  filter: Alpha(opacity=0);
   transition: all 0.8s; }
 
 #content #cnt1 .box ul .size:after {
@@ -105,11 +105,11 @@
     margin-top: 300px;
     transition: all 0.8s;
     opacity: 0;
-    filter: Alpha(0); }
+    filter: Alpha(opacity=0); }
   #content #cnt2 p.on {
     margin-top: 400px;
     opacity: 1;
-    filter: Alpha(100); }
+    filter: Alpha(opacity=100); }
 
 #content #cnt2_1 {
   background-image: url("../images/sub1/1_2.jpg");
@@ -277,5 +277,62 @@
 
 .control .next {
   margin-left: 600px; }
+
+.page {
+  height: 65px;
+  background: #101420;
+  color: #ffb329;
+  font-size: 20px;
+  padding-bottom: 100px;
+  text-align: center;
+  padding-left: 32%; }
+  .page li {
+    float: left;
+    margin-left: 73px; }
+    .page li a {
+      display: inline-block;
+      opacity: 0.4;
+      filter: Alpha(opacity=40);
+      width: 40px;
+      height: 65px;
+      line-height: 65px; }
+
+.page li.on a {
+  opacity: 1;
+  filter: Alpha(opacity=100);
+  font-size: 22px;
+  border-bottom: 1px solid #ffb329; }
+
+/* belle */
+#content.belle #cnt1 {
+  background-image: url("../images/main/index2.jpg"); }
+
+#content.belle #cnt2 {
+  background-image: url("../images/sub1/3_1.jpg"); }
+
+#content #cnt2_1 {
+  background-image: url("../images/sub1/3_2.jpg"); }
+
+#content.belle #cnt4 .mainColor .color {
+  background-color: #750f15; }
+
+#content.belle #cnt4 .color2 .list2, #content #cnt4 .color2 .list3 {
+  margin-left: 74px; }
+
+#content.belle #cnt4 .color2 .subColor .list1 .color {
+  background-color: #f8e7d3; }
+
+#content.belle #cnt4 .color2 .subColor .list2 .color {
+  background-color: #6d8041; }
+
+#content.belle #cnt4 .color2 .subColor .list3 .color {
+  background-color: #ffffff;
+  border: 1px solid #ccc; }
+
+#content.belle #cnt4 .color2 .font .list1 .color {
+  background-color: #333333; }
+
+#content.belle #cnt4 .color2 .font .list2 .color {
+  background-color: #cccccc; }
 
 /*# sourceMappingURL=sub1.css.map */

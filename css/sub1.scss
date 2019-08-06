@@ -22,6 +22,10 @@ $navyColor: #101420;
     display: block;
     clear: both
 }
+@mixin opa($num1, $num2) {
+    opacity: $num1;
+    filter: Alpha(opacity=$num2);
+}
 
 @mixin opacity1 {
     opacity: 1;filter: Alpha(100)
@@ -30,7 +34,7 @@ $navyColor: #101420;
     opacity: 0;filter: Alpha(0)
 }
 
-/* sub1 */
+/* sub1 garden */
 #content #cnt1{
     background: url("../images/main/index3.jpg")no-repeat 0 center;margin-top: -70px;height: auto;color:#fff;
     .area{
@@ -50,8 +54,8 @@ $navyColor: #101420;
         .size{font-size: 20px;}
     }
 }
-#content #cnt1 .fade.on{margin-bottom: 0px;@include opacity1}
-#content #cnt1 .fade{margin-bottom: -50px;@include opacity0;@include transition}
+#content #cnt1 .fade.on{margin-bottom: 0px;@include opa(1,100)}
+#content #cnt1 .fade{margin-bottom: -50px;@include opa(0,0);@include transition}
 #content #cnt1 .box ul .size:after{content: "";display: block;width: 40px;height: 1px;background: #fff;margin: 10px 0}
 #content #cnt1 .siteLink{text-align: center;display: block;width: 170px;height: 40px;line-height: 40px;border: 1px solid $activeColor;border-radius: 50px;margin: auto;@include transition}
 #content #cnt1 .siteLink:hover, #content #cnt1 .siteLink:focus{background: $activeColor;counter-reset: #fff;}
@@ -62,8 +66,8 @@ $navyColor: #101420;
 #content .bgfix{background: no-repeat fixed center}
 #content #cnt2{
     background-image:url("../images/sub1/1_1.jpg");height: 900px;
-    p{font-size: 23px;line-height: 53.4px;font-family: notoR;margin-top: 300px;@include transition;@include opacity0}
-    p.on{margin-top: 400px;@include opacity1}
+    p{font-size: 23px;line-height: 53.4px;font-family: notoR;margin-top: 300px;@include transition;@include opa(0,0)}
+    p.on{margin-top: 400px;@include opa(1,100)}
 }
 #content #cnt2_1{background-image: url("../images/sub1/1_2.jpg");height: 900px}
 #content #cnt3{
@@ -120,8 +124,6 @@ $navyColor: #101420;
     .cntTit{color: #fff;margin-top: 120px;margin-left: 0;margin-right: 45px}
     .sliderWrap{position: absolute;top:171px;left:50%;margin-left:-390px;width: 1010px;height: 604px;padding-top: 58px;padding-left: 40px;padding-bottom: 85px;background:  url("../images/sub1/tablet.png")no-repeat}
 }
-
-
 #slider, #slider .visual li{width: 1050px;height: 604px;}
 #slider .visual, .control{position: absolute}
 #slider{position: relative;overflow: hidden;width: 1050px;height: 604px;}
@@ -131,3 +133,24 @@ $navyColor: #101420;
 #slider .visual li p{margin-top: 25%;float:right;line-height: 36px}
 .control{top: 28%;left: -50px}
 .control .next{margin-left: 600px}
+
+.page{
+    height: 65px;background:$navyColor;color: $activeColor;font-size:20px;padding-bottom:100px;text-align: center;padding-left:32%;
+    li{
+        float: left;margin-left:73px;
+        a{display: inline-block;@include opa(0.4,40);width: 40px;height: 65px;line-height: 65px;}
+    }
+}
+.page li.on a{@include opa(1,100);font-size: 22px;border-bottom: 1px solid $activeColor}
+
+/* belle */
+#content.belle #cnt1{background-image: url("../images/main/index2.jpg")}
+#content.belle #cnt2{background-image:url("../images/sub1/3_1.jpg")}
+#content #cnt2_1{background-image: url("../images/sub1/3_2.jpg")}
+#content.belle #cnt4 .mainColor .color{background-color: #750f15;}
+#content.belle #cnt4 .color2 .list2, #content #cnt4 .color2 .list3{margin-left: 74px}
+#content.belle #cnt4 .color2 .subColor .list1 .color{background-color: #f8e7d3}
+#content.belle #cnt4 .color2 .subColor .list2 .color{background-color: #6d8041}
+#content.belle #cnt4 .color2 .subColor .list3 .color{background-color: #ffffff;border: 1px solid #ccc;}
+#content.belle #cnt4 .color2 .font .list1 .color{background-color: #333333}
+#content.belle #cnt4 .color2 .font .list2 .color{background-color: #cccccc}

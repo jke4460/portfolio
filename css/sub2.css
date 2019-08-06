@@ -20,7 +20,7 @@
     padding-left: 30px; }
     #cnt1 .area ul li img {
       position: relative;
-      border: 1px solid #000;
+      border: 1px solid #ccc;
       border-radius: 50%; }
     #cnt1 .area ul li span {
       display: block;
