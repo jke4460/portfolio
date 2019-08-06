@@ -125,7 +125,8 @@
     right: 30px;
     top: -50px; }
   #content #cnt3 iframe {
-    margin: 130px 0; }
+    margin: 130px 0;
+    border: none; }
 
 #content .mainT {
   font-size: 18px;
