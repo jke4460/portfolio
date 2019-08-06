@@ -11,13 +11,17 @@
     margin: 50px 0; }
   #cnt1 .area p {
     margin-bottom: 150px;
-    font-size: 20px; }
+    font-family: notoT;
+    font-size: 18px;
+    line-height: 36px; }
   #cnt1 .area ul li {
     float: left;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ffb329;
     padding-left: 30px; }
     #cnt1 .area ul li img {
-      position: relative; }
+      position: relative;
+      border: 1px solid #000;
+      border-radius: 50%; }
     #cnt1 .area ul li span {
       display: block;
       text-align: center;
@@ -32,11 +36,13 @@
 
 #cnt1 .area ul li:nth-child(1) {
   padding-left: 0; }
+  #cnt1 .area ul li:nth-child(1) img {
+    margin-left: 35px; }
 
 /* cube */
 .scene-hero {
   height: 200px;
-  margin: 40px 400px;
+  margin: 40px 300px;
   perspective: 500px;
   border: none; }
 

@@ -28,20 +28,23 @@ $navyColor: #101420;
   .right{float: right}
   .left{float: left}
   h3{font-size: 70px;margin: 50px 0}
-  p{margin-bottom: 150px;font-size: 20px}
+  p{margin-bottom: 150px;font-family: notoT;font-size: 18px;line-height: 36px}
   ul{
-    li{float: left;border-bottom: 1px solid #ccc;padding-left:30px;
-      img{position: relative;}
+    li{float: left;border-bottom: 1px solid $activeColor;padding-left:30px;
+      img{position: relative;border: 1px solid #000;border-radius: 50%}
       span{display: block;text-align: center;margin: 30px 0}
     }
   }
 }
 #cnt1 .area h3:after{content: "";display: block;width: 355px;height: 1px;background: $activeColor;}
-#cnt1 .area ul li:nth-child(1){padding-left: 0}
+#cnt1 .area ul li:nth-child(1){
+  padding-left: 0;
+  img{margin-left: 35px}
+}
 
 
 /* cube */
-.scene-hero {height: 200px;margin: 40px 400px;perspective: 500px;border: none;}
+.scene-hero {height: 200px;margin: 40px 300px;perspective: 500px;border: none;}
 .cube {width: 200px;height: 200px;position: relative;transform-style: preserve-3d;transform: translateZ(-100px);}
 .cube-hero {margin: 0 auto;}
 .cube.is-spinning {animation: spinCube 10s infinite ease-in-out;}
