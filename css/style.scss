@@ -1,55 +1,4 @@
 @charset "utf-8";
-@font-face{
-    font-family:monEB;
-    src: url("../font/Montserrat-ExtraBold.eot");
-    src: local("※"),
-    url("../font/Montserrat-ExtraBold.woff") format("woff"),
-    url("../font/Montserrat-ExtraBold.otf") format("opentype"),
-    url("../font/Montserrat-ExtraBold.ttf") format("truetype")
-}
-@font-face{
-    font-family:monR;
-    src: url("../font/Montserrat-Regular.eot");
-    src: local("※"),
-    url("../font/Montserrat-Regular.woff") format("woff"),
-    url("../font/Montserrat-Regular.otf") format("opentype"),
-    url("../font/Montserrat-Regular.ttf") format("truetype")
-}
-@font-face{
-    font-family:monM;
-    src: url("../font/Montserrat-Medium.eot");
-    src: local("※"),
-    url("../font/Montserrat-Medium.woff") format("woff"),
-    url("../font/Montserrat-Medium.otf") format("opentype"),
-    url("../font/Montserrat-Medium.ttf") format("truetype")
-}
-@font-face{
-    font-family:monL;
-    src: url("../font/Montserrat-Light.eot");
-    src: local("※"),
-    url("../font/Montserrat-Light.woff") format("woff"),
-    url("../font/Montserrat-Light.otf") format("opentype"),
-    url("../font/Montserrat-Light.ttf") format("truetype")
-}
-@font-face{
-    font-family:notoR;
-    src: url("../font/NotoSansKR-Regular.eot");
-    src: local("※"),
-    url("../font/NotoSansKR-Regular.woff2") format("woff2"),
-    url("../font/NotoSansKR-Regular.woff") format("woff"),
-    url("../font/NotoSansKR-Regular.otf") format("opentype"),
-}
-/* tag reset */
-body, ul, div, a, button, h1, h2, h3, h4, h5, h6, p{margin: 0;padding: 0;}
-a:link, a:visited, a:hover, a:active{color: inherit;text-decoration: none}
-a{cursor: pointer;}
-img{vertical-align: top;border: none;max-width: 100%;height: auto}
-button{background: none;border: none;font-family: inherit;cursor: pointer;}
-ul{list-style: none}
-header, section, div, nav, footer{display: block}
-.blind{font-size: 0;text-indent: -9999px;width: 1px;height: 1px;overflow: hidden;position: absolute;top: 0;left: -9999px;line-height: -9999px}
-body{font-family: monR;color: #303030;overflow: hidden}
-
 /* variable */
 $activeColor: #ffb329;
 $navyColor: #101420;
@@ -60,23 +9,27 @@ $navyColor: #101420;
 @mixin posA {
     position: absolute;
 }
-@mixin  transition {
-    transition: all 0.3s
+@mixin  transition($value) {
+    transition: $value;  //all 0.3s
+}
+@mixin opa($num1, $num2) {
+    opacity: $num1;
+    filter: Alpha(opacity=$num2);
 }
 /* content */
 html, body, #content, .wrap{height: 100%;}
-body{overflow: hidden;}
+body{overflow: hidden;background: #000}
 .area{margin: 0 160px;}
 #header{
-    width: 100%;padding-top: 30px;position: fixd;@include posR;
+    width: 100%;padding-top: 30px;position: fixd;
     #MBtn{display: none;}
     #menuBtn{
         @include posA;top: 30px;right: 160px;margin-top: 8px;
     }
 }
-#menuBtn:after{content: "";@include posA;top: -8px;right: -4px;width: 42px;height: 42px;border-radius: 50%;background-color: $navyColor;z-index: -10;opacity: 0;filter: Alpha(0);@include transition}
+#menuBtn:after{content: "";@include posA;top: -8px;right: -4px;width: 42px;height: 42px;border-radius: 50%;background-color: $navyColor;z-index: -10;@include opa(0, 0);filter: Alpha(0);@include transition(all 0.3s)}
 
-#menuBtn.on:after{opacity: 1;filter: Alpha(100);transform: scale(1.5)}
+#menuBtn.on:after{@include opa(1, 100);filter: Alpha(100);transform: scale(1.5)}
 
 #gnb{
     @include posA;top: 0;bottom: 0;left: 0;right: 0;height: 1000px;background-color: $navyColor;color: #fff;font-family: monEB;font-size: 90px;z-index: 1000;display:none;
@@ -84,7 +37,7 @@ body{overflow: hidden;}
         width: 700px;margin: 140px auto;
         li{
             margin-bottom: 100px;
-            a{color: fff;@include transition}
+            a{color: fff;@include transition(all 0.3s)}
             a:hover, a:focus{color: $activeColor}
         }
     }
@@ -95,12 +48,30 @@ body{overflow: hidden;}
 #gnb ul li.on a{color: $activeColor}
 #gnb ul li a:before{content: "";display: inline-block;width: 90px;height: 1px;background: $activeColor;margin-bottom: 32.5px;display: none;margin-left: -90px}
 #gnb ul li.on a:before{display: inline-block}
-#indicator ul li.on a{width: 50px;background: $activeColor;margin-left: 0}
 
+#indicator{
+    position: fixed;right:0px;top:50%;margin-top:-100px;width: 50px;z-index: 900;
+    ul li{
+        margin-bottom: 30px;
+        a{display: block;width: 25px;height: 1px;margin-left: 25px;background: #fff;@include transition(all 0.3s)}
+        a.active{width: 50px;background: $activeColor;margin-left: 0}
+    }
+}
 
+#content #bg{
+    position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: -100;
+    img{
+        @include posA;@include transition(all 0.7s);object-fit: cover;height: 100%;width: 100%;top: 0;left: 0;@include opa(0, 0);transform: scale(0.95);
+        &.selected{@include opa(0.5, 50);transform: scale(1)}
+    }
+}
+
+#content .wrap{@include posR;width: 100vw;height: 100vh;overflow-y: auto;margin-left: 1%}
 #content .wrap > div{
-    margin-top: -70px;height: calc(100% / 3);
-    .title.area{width: 880px;border-bottom: 1px solid $activeColor;@include posR;top: 50%;padding-bottom: 15px;@include posR}
+    height: calc(100% / 3);color: #ccc;@include opa(0.5, 50);transition: opaicty, padding 1s;
+    .title.area{width: 880px;border-bottom: 1px solid $activeColor;@include posR;top: 33%;padding-bottom: 15px;@include posR;}
+    &.selected{padding-left: 10%;color: $activeColor;@include opa(1, 100);}
+    &#cnt3 .title.area{top: 15%;}
     h3, span{color: $activeColor}
     a{@include posA;top: 50%;right: 0; padding-left: 70px}
     h3{font-family: monM;font-size: 70px;letter-spacing: -1.4px;display: inline-block}
@@ -108,35 +79,11 @@ body{overflow: hidden;}
     .sub_title{font-size: 15px}
     .num{@include posA;font-size: 20px}
 }
-#content #bg{
-    position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: -100;
-    img{
-        @include posA;transition: all 0.7s;object-fit: cover;height: 100%;width: 100%;top: 0;left: 0;opacity: 0;transform: scale(0.95);
-        &.selected{opacity: 0.9;transform: scale(1)}
-    }
-}
-#content .wrap{@include posR;width: 100%;height: 100vh;overflow-y: auto;margin-left: 1%}
-#content .wrap .project{transition: opaicty, padding 1s}
-#content .wrap .project.selected{padding-left: 10%}
-#content .project.selected{color: $activeColor}
 
-#content .project .wrap > div{opacity: 0;}
-#content .project .wrap > .title{opacity: 1;}
-#content .project{color: #ccc}
-
-#content #cnt1{
-    .sub_title{padding-left: 70px}
-}
-#content #cnt2{
-    .sub_title{padding-left: 254px}
-}
-#content #cnt3{
-    .sub_title{padding-left: 147px}
-}
-#content #cnt4{
-    .sub_title{padding-left: 108px}  
-}
-
+#content #cnt1 .sub_title{padding-left: 70px}
+#content #cnt2 .sub_title{padding-left: 254px}
+#content #cnt3 .sub_title{padding-left: 147px}
+#content #cnt4 .sub_title{padding-left: 108px}
 
 /* footer */
 #footer{
@@ -146,7 +93,7 @@ body{overflow: hidden;}
     ul{
         margin-left: 93px;margin-bottom: 6px;height: 20px;
         li{float: left}
-        a{@include transition}
+        a{@include transition(all 0.3s)}
         .insta{background-image: url("../images/common/insta_bg.png")}
         .facebook{margin-left: 26px;background-image: url("../images/common/facebook_bg.png")}
         .email{margin-left: 23px;background-image: url("../images/common/mail_bg.png")}
@@ -156,21 +103,3 @@ body{overflow: hidden;}
 #footer ul li a:hover, #footer ul li a:focus{opacity: 0;filter: Alpha(0)} 
 /* footer */
 #Mfooter{display: none}
-/* main  */
-#indicator{
-    position: fixed;right:0px;top:50%;margin-top:-100px;width: 50px;z-index: 900;
-    ul li{
-        margin-bottom: 30px;
-        a{display: block;width: 25px;height: 1px;margin-left: 25px;background: #fff}
-    }
-}
-
-
-
-
-
-
-
-
-
-

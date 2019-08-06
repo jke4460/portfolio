@@ -1,6 +1,6 @@
 /* sub1 */
 #content #cnt1 {
-  background: url("../images/main/index3.jpg") no-repeat 0 center;
+  background: url("../images/main/index2.jpg") no-repeat 0 center;
   margin-top: -70px;
   height: auto;
   color: #fff; }
@@ -96,7 +96,7 @@
   background: no-repeat fixed center; }
 
 #content #cnt2 {
-  background-image: url("../images/sub1/1_1.jpg");
+  background-image: url("../images/sub1/3_1.jpg");
   height: 900px; }
   #content #cnt2 p {
     font-size: 23px;
@@ -112,7 +112,7 @@
     filter: Alpha(100); }
 
 #content #cnt2_1 {
-  background-image: url("../images/sub1/1_2.jpg");
+  background-image: url("../images/sub1/3_2.jpg");
   height: 900px; }
 
 #content #cnt3 {
@@ -277,4 +277,4 @@
 .control .next {
   margin-left: 600px; }
 
-/*# sourceMappingURL=sub1.css.map */
+/*# sourceMappingURL=sub1_2.css.map */

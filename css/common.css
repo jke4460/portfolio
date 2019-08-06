@@ -19,8 +19,16 @@
   font-family: notoR;
   src: url("../font/NotoSansKR-Regular.eot");
   src: local("※"), url("../font/NotoSansKR-Regular.woff2") format("woff2"), url("../font/NotoSansKR-Regular.woff") format("woff"), url("../font/NotoSansKR-Regular.otf") format("opentype"); }
+@font-face {
+  font-family: notoT;
+  src: url("../fonT/NotoSansKR-Thin.otf.eot");
+  src: local("※"), url("../font/NotoSansKR-Thin.woff2") format("woff2"), url("../font/NotoSansKR-Thin.woff") format("woff"), url("../font/NotoSansKR-Thin.otf") format("opentype"); }
+@font-face {
+  font-family: notoB;
+  src: url("../fonT/NotoSansKR-Bold.eot");
+  src: local("※"), url("../font/NotoSansKR-Bold.woff2") format("woff2"), url("../font/NotoSansKR-Bold.woff") format("woff"), url("../font/NotoSansKR-Bold.otf") format("opentype"); }
 /* tag reset */
-body, ul, div, a, button, h1, h2, h3, p {
+body, ul, div, a, button, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0; }
 
@@ -85,20 +93,6 @@ html, body, #content, .wrap {
     right: 160px;
     margin-top: 8px; }
 
-#menuBtn:after {
-  content: "";
-  position: absolute;
-  top: -8px;
-  right: -4px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background-color: #101420;
-  z-index: -10;
-  opacity: 0;
-  filter: Alpha(0);
-  transition: all 0.3s; }
-
 #menuBtn.on:after {
   opacity: 1;
   filter: Alpha(100);
@@ -122,17 +116,102 @@ html, body, #content, .wrap {
     margin: 140px auto; }
     #gnb ul li {
       margin-bottom: 100px; }
-      #gnb ul li a {
-        color: fff;
-        transition: all 0.3s; }
-      #gnb ul li a:hover, #gnb ul li a:focus {
-        color: #ffb329; }
   #gnb #closeBtn {
     position: absolute;
     top: 30px;
     right: 160px; }
   #gnb #McloseBtn {
     display: none; }
+
+.menu-circle {
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  left: -1px;
+  bottom: -2px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 800;
+  opacity: 0.2;
+  transform: scale(1);
+  transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-box-shadow: 0px 0px 32px 0px rgba(22, 24, 58, 0.05);
+  -moz-box-shadow: 0px 0px 32px 0px rgba(22, 24, 58, 0.05);
+  box-shadow: 0px 0px 32px 0px rgba(22, 24, 58, 0.05); }
+
+.menu-pulse {
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  width: inherit;
+  height: inherit;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: content-box;
+  opacity: 0; }
+  .menu-pulse.is-learned {
+    visibility: hidden; }
+
+.first-pulse {
+  animation: pulse-border 2000ms ease-out infinite; }
+
+.second-pulse {
+  animation: pulse-border 2000ms 400ms ease-out infinite; }
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 0; }
+  10% {
+    opacity: 1; }
+  50% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+    opacity: 0; }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+    opacity: 0;
+    border-width: 1px; } }
+.menu-toggle:hover .menu-circle {
+  background-color: #101420;
+  border: 2px solid #101420;
+  opacity: 1;
+  transform: scale(0.8);
+  transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-box-shadow: 0px 0px 32px 0px rgba(22, 24, 58, 0.1);
+  -moz-box-shadow: 0px 0px 32px 0px rgba(22, 24, 58, 0.1);
+  box-shadow: 0px 0px 32px 0px rgba(22, 24, 58, 0.1); }
+
+.menu-toggle.menu-open .menu-circle {
+  transform: scale(25);
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1), opacity 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0; }
+
+/* ------ Menu Overlay ------- */
+.menu-overlay {
+  background-color: #fff;
+  color: #333;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 800;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.menu-overlay.menu-open {
+  opacity: 1;
+  visibility: visible;
+  left: 0px;
+  top: 0; }
 
 #gnb ul li.on a {
   color: #ffb329; }
@@ -157,7 +236,9 @@ html, body, #content, .wrap {
   height: 130px;
   width: 100%;
   position: fixed;
-  bottom: 0; }
+  bottom: 0;
+  opacity: 0.5;
+  filter: Alpha(50); }
   #footer .area {
     margin-left: 460px;
     margin-right: 460px;

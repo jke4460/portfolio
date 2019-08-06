@@ -1,77 +1,11 @@
-@charset "UTF-8";
-@font-face {
-  font-family: monEB;
-  src: url("../font/Montserrat-ExtraBold.eot");
-  src: local("※"), url("../font/Montserrat-ExtraBold.woff") format("woff"), url("../font/Montserrat-ExtraBold.otf") format("opentype"), url("../font/Montserrat-ExtraBold.ttf") format("truetype"); }
-@font-face {
-  font-family: monR;
-  src: url("../font/Montserrat-Regular.eot");
-  src: local("※"), url("../font/Montserrat-Regular.woff") format("woff"), url("../font/Montserrat-Regular.otf") format("opentype"), url("../font/Montserrat-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: monM;
-  src: url("../font/Montserrat-Medium.eot");
-  src: local("※"), url("../font/Montserrat-Medium.woff") format("woff"), url("../font/Montserrat-Medium.otf") format("opentype"), url("../font/Montserrat-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: monL;
-  src: url("../font/Montserrat-Light.eot");
-  src: local("※"), url("../font/Montserrat-Light.woff") format("woff"), url("../font/Montserrat-Light.otf") format("opentype"), url("../font/Montserrat-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: notoR;
-  src: url("../font/NotoSansKR-Regular.eot");
-  src: local("※"), url("../font/NotoSansKR-Regular.woff2") format("woff2"), url("../font/NotoSansKR-Regular.woff") format("woff"), url("../font/NotoSansKR-Regular.otf") format("opentype"); }
-/* tag reset */
-body, ul, div, a, button, h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-  padding: 0; }
-
-a:link, a:visited, a:hover, a:active {
-  color: inherit;
-  text-decoration: none; }
-
-a {
-  cursor: pointer; }
-
-img {
-  vertical-align: top;
-  border: none;
-  max-width: 100%;
-  height: auto; }
-
-button {
-  background: none;
-  border: none;
-  font-family: inherit;
-  cursor: pointer; }
-
-ul {
-  list-style: none; }
-
-header, section, div, nav, footer {
-  display: block; }
-
-.blind {
-  font-size: 0;
-  text-indent: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: -9999px;
-  line-height: -9999px; }
-
-body {
-  font-family: monR;
-  color: #303030;
-  overflow: hidden; }
-
 /* variable */
 /* content */
 html, body, #content, .wrap {
   height: 100%; }
 
 body {
-  overflow: hidden; }
+  overflow: hidden;
+  background: #000; }
 
 .area {
   margin: 0 160px; }
@@ -79,8 +13,7 @@ body {
 #header {
   width: 100%;
   padding-top: 30px;
-  position: fixd;
-  position: relative; }
+  position: fixd; }
   #header #MBtn {
     display: none; }
   #header #menuBtn {
@@ -100,11 +33,13 @@ body {
   background-color: #101420;
   z-index: -10;
   opacity: 0;
+  filter: Alpha(opacity=0);
   filter: Alpha(0);
   transition: all 0.3s; }
 
 #menuBtn.on:after {
   opacity: 1;
+  filter: Alpha(opacity=100);
   filter: Alpha(100);
   transform: scale(1.5); }
 
@@ -154,21 +89,77 @@ body {
 #gnb ul li.on a:before {
   display: inline-block; }
 
-#indicator ul li.on a {
+#indicator {
+  position: fixed;
+  right: 0px;
+  top: 50%;
+  margin-top: -100px;
   width: 50px;
-  background: #ffb329;
-  margin-left: 0; }
+  z-index: 900; }
+  #indicator ul li {
+    margin-bottom: 30px; }
+    #indicator ul li a {
+      display: block;
+      width: 25px;
+      height: 1px;
+      margin-left: 25px;
+      background: #fff;
+      transition: all 0.3s; }
+    #indicator ul li a.active {
+      width: 50px;
+      background: #ffb329;
+      margin-left: 0; }
+
+#content #bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -100; }
+  #content #bg img {
+    position: absolute;
+    transition: all 0.7s;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: Alpha(opacity=0);
+    transform: scale(0.95); }
+    #content #bg img.selected {
+      opacity: 0.5;
+      filter: Alpha(opacity=50);
+      transform: scale(1); }
+
+#content .wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  margin-left: 1%; }
 
 #content .wrap > div {
-  margin-top: -70px;
-  height: calc(100% / 3); }
+  height: calc(100% / 3);
+  color: #ccc;
+  opacity: 0.5;
+  filter: Alpha(opacity=50);
+  transition: opaicty, padding 1s; }
   #content .wrap > div .title.area {
     width: 880px;
     border-bottom: 1px solid #ffb329;
     position: relative;
-    top: 50%;
+    top: 33%;
     padding-bottom: 15px;
     position: relative; }
+  #content .wrap > div.selected {
+    padding-left: 10%;
+    color: #ffb329;
+    opacity: 1;
+    filter: Alpha(opacity=100); }
+  #content .wrap > div#cnt3 .title.area {
+    top: 15%; }
   #content .wrap > div h3, #content .wrap > div span {
     color: #ffb329; }
   #content .wrap > div a {
@@ -188,52 +179,6 @@ body {
   #content .wrap > div .num {
     position: absolute;
     font-size: 20px; }
-
-#content #bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -100; }
-  #content #bg img {
-    position: absolute;
-    transition: all 0.7s;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform: scale(0.95); }
-    #content #bg img.selected {
-      opacity: 0.9;
-      transform: scale(1); }
-
-#content .wrap {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  margin-left: 1%; }
-
-#content .wrap .project {
-  transition: opaicty, padding 1s; }
-
-#content .wrap .project.selected {
-  padding-left: 10%; }
-
-#content .project.selected {
-  color: #ffb329; }
-
-#content .project .wrap > div {
-  opacity: 0; }
-
-#content .project .wrap > .title {
-  opacity: 1; }
-
-#content .project {
-  color: #ccc; }
 
 #content #cnt1 .sub_title {
   padding-left: 70px; }
@@ -287,22 +232,5 @@ body {
 /* footer */
 #Mfooter {
   display: none; }
-
-/* main  */
-#indicator {
-  position: fixed;
-  right: 0px;
-  top: 50%;
-  margin-top: -100px;
-  width: 50px;
-  z-index: 900; }
-  #indicator ul li {
-    margin-bottom: 30px; }
-    #indicator ul li a {
-      display: block;
-      width: 25px;
-      height: 1px;
-      margin-left: 25px;
-      background: #fff; }
 
 /*# sourceMappingURL=style.css.map */

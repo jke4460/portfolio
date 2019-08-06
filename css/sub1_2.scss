@@ -32,7 +32,7 @@ $navyColor: #101420;
 
 /* sub1 */
 #content #cnt1{
-    background: url("../images/main/index3.jpg")no-repeat 0 center;margin-top: -70px;height: auto;color:#fff;
+    background: url("../images/main/index2.jpg")no-repeat 0 center;margin-top: -70px;height: auto;color:#fff;
     .area{
         width: 900px;padding: 270px 0;margin: auto 50%;margin-left:450px;
         .txt{color: $activeColor;border-bottom:1px solid #fff;padding-bottom: 35px;
@@ -61,11 +61,12 @@ $navyColor: #101420;
 #content .area .num.right, #content .area .cntTit.right{float: right}
 #content .bgfix{background: no-repeat fixed center}
 #content #cnt2{
-    background-image:url("../images/sub1/1_1.jpg");height: 900px;
+    background-image:url("../images/sub1/3_1.jpg");height: 900px;
     p{font-size: 23px;line-height: 53.4px;font-family: notoR;margin-top: 300px;@include transition;@include opacity0}
     p.on{margin-top: 400px;@include opacity1}
 }
-#content #cnt2_1{background-image: url("../images/sub1/1_2.jpg");height: 900px}
+
+#content #cnt2_1{background-image: url("../images/sub1/3_2.jpg");height: 900px}
 #content #cnt3{
     position: relative;
     .num{position: absolute;right: 30px;top: -50px}
