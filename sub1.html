@@ -2,34 +2,40 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8">
-    <title> project || kyungeun_chi </title>
+    <title> 3rd_project || kyungeun_chi </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/sub1.css">
+    <link rel="shortcut icon" href="images/common/pavicon.ico">
     <!--[if lt IE 9]>
         <script type="text/javascript" src="js/html5shiv.min.js"></script>
     <![endif]-->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/sub.js"></script>
+    <script src="js/menu.js"></script>
 </head>
-<body>
+<body id="sub">
     <header id="header">
         <div class="area">
             <h1 id="logo">
-                <a href="#main"><img src="images/common/logo.png" alt="지경은 포트폴리오" width="114" height="38"></a>
+                <a href="index.html"><img src="images/common/logo.png" alt="지경은 포트폴리오" width="114" height="38"></a>
             </h1>
             <button id="menuBtn">
                 <img src="images/common/menu_btn.png" alt="메뉴열기" width="32" height="23">
+                <span class="menu-circle">
+                    <span class="menu-pulse first-pulse"></span>
+                    <span class="menu-pulse second-pulse"></span>
+                  </span>
             </button>
             <button id="MBtn">
                 <img src="images/common/Mmenu_btn.png" alt="메뉴열기" width="42" height="30">
             </button>
-            <nav id="gnb">
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li class="on"><a href="">POJECT</a></li>
-                    <li><a href="">ABOUT ME</a></li>
+            <nav id="gnb" class="menu-overlay">
+                <ul class="overlay-content">
+                    <li><a href="index.html">HOME</a></li>
+                    <li class="on"><a href="sub1.html">PROJECT</a></li>
+                    <li><a href="sub2.html">ABOUT ME</a></li>
                 </ul>
                 <button id="closeBtn">
                     <img src="images/common/close.png" alt="메뉴닫기" width="28" height="28">
@@ -71,9 +77,10 @@
                 <div class="area">
                     <h4 class="num num1">01</h4>
                     <h5 class="cntTit">Wire frame</h5>
-                    <p class="fade up">GardenGongbang은 가상으로 제작한 샐러드, 샌드위치 가게의 사이트로,<br>
+                    <p class="fade up"><span class="str">GardenGongbang</span>은 가상으로 제작한 샐러드, 샌드위치 가게의 사이트로,<br>
                         건강을 챙기면서 든든한 한끼 식사를 하고자 하는 현대인들에게 다양한 종류의 메뉴들을<br>
-                        쉽고 간단하게 확인할 수 있는 사이트 입니다.
+                        쉽고 간단하게 확인할 수 있는 사이트 입니다.<br>또한 <span class="str">반응형 웹사이트</span>로, <span class="str">1920X1080 </span>해상도에서 부터, <span class="str">360x640</span> 해상도까지
+                        제어 되어있습니다.
                     </p>
                 </div>
             </article>
@@ -115,7 +122,7 @@
                                     </li>
                                 </ul>
                                 <h6 class="mainT">Font colors</h6>
-                                    <ul class="font">
+                                    <ul class="fontColor">
                                         <li class="list1">
                                             <span class="color"></span>
                                             <span class="name">#303030</span>
@@ -162,21 +169,23 @@
                             <ul class="visual">
                                 <li>
                                     <img src="images/sub1/slider1.jpg" alt="">
-                                    <p>메뉴 항목 별로 다른 html으로 마크업 하여, 클릭했을 때,<br>
+                                    <p>메뉴 항목 별로 <span class="str2">다른 html으로 마크업</span> 하여, 클릭했을 때,<br>
                                         해당 메뉴 목록 페이지로 이동하게 끔 구성되었습니다.<br>
-                                        또한 이미지를 클릭하면, 상세 메뉴의 정보가 모달창으로 띄워집니다.
+                                        또한 이미지를 클릭하면, 상세 메뉴의 정보가 <span class="str2">모달창</span>으로 띄워집니다.
                                     </p>        
                                 </li>
                                 <li>
                                     <img src="images/sub1/slider2.jpg" alt="">
                                     <p>
-                                        모달이 창에는 aria-haspopup="dialog" 와 title="대화상자"를<br>
+                                        모달이 창에는 <span class="str2">aria-haspopup="dialog" 와 title="대화상자"</span>를<br>
                                         사용하여 접근성을 살려주었습니다.
                                     </p>
                                 </li>
                                 <li>
                                     <img src="images/sub1/slider3.jpg" alt="">
-                                    <p>2</p>
+                                    <p>
+                                        메뉴 상세 페이지로, 사용자가 메뉴를 클릭하면<br> 해당 음식에 관한<span class="str2">재료와 영양성분</span>을 확인해 볼 수 있습니다.
+                                    </p>
                                 </li>
                             </ul>
                         </div>
@@ -189,45 +198,40 @@
                             </button>
                         </div>
                     </div>
+                    <a href="https://jke4460.github.io/project3/" class="siteLink">visit site</a>
                 </div>
             </article>
                 <ul class="page">
-                    <li><a href="sub2.html">1st</a></li>
+                    <li><a href="sub1_3.html">1st</a></li>
                     <li><a href="sub1_2.html">2nd</a></li>
-                    <li class="on"><a href="sub2.html">3rd</a></li>
-                    <li><a href="sub2.html">4th</a></li>
+                    <li class="on"><a href="sub1.html">3rd</a></li>
+                    <li><a href="sub1_4.html">4th</a></li>
                 </ul>
         </section>
-        <footer id="footer">
-                <div class="area">
-                    <a href="#main" class="footlogo">
-                        <img src="images/common/logo.png" alt="로고">
-                    </a>
-                    <div class="footBox">
-                        <ul>
-                            <li class="insta"><a href="https://www.instagram.com/kyungeun_chi/?hl=ko" target="_blank"><img src="images/common/insta.png" alt="인스타그램" width="19" height="18"></a></li>
-                            <li class="facebook"><a href="https://www.facebook.com/ruddmsdudeh" target="_blank"><img src="images/common/facebook.png" alt="페이스북" width="9" height="19"></a></li>
-                            <li class="email"><a href="jke4460@naver.com" target="_blank"><img src="images/common/mail.png" alt="이메일"></a></li>
-                        </ul>
-                        <p>Copyright© 2019 Kyungeun_Chi.<br>All rights reserved</p>
-                    </div>
+    <footer id="footer">
+            <div class="area">
+                <div class="footBox">
+                    <ul>
+                        <li class="insta"><a href="https://www.instagram.com/kyungeun_chi/?hl=ko" target="_blank"><img src="images/common/insta.png" alt="인스타그램" width="19" height="18"></a></li>
+                        <li class="facebook"><a href="https://www.facebook.com/ruddmsdudeh" target="_blank"><img src="images/common/facebook.png" alt="페이스북" width="9" height="19"></a></li>
+                        <li class="email"><a href="jke4460@naver.com" target="_blank"><img src="images/common/mail.png" alt="이메일"></a></li>
+                    </ul>
+                    <p>Copyright© 2019 Kyungeun_Chi. All rights reserved</p>
                 </div>
-        </footer>
-        <footer id="Mfooter">
-                <div class="area">
-                    <a href="#main" class="footlogo">
-                        <img src="images/common/logoM.png" alt="로고">
-                    </a>
-                    <div class="footBox">
-                        <ul>
-                            <li class="insta"><a href="https://www.instagram.com/kyungeun_chi/?hl=ko" target="_blank"><img src="images/common/instaM.png" alt="인스타그램" width="30" height="28"></a></li>
-                            <li class="facebook"><a href="https://www.facebook.com/ruddmsdudeh" target="_blank"><img src="images/common/facebookM.png" alt="페이스북" width="14" height="30"></a></li>
-                            <li class="email"><a href="jke4460@naver.com" target="_blank"><img src="images/common/mailM.png" alt="이메일" width="37" height="24"></a></li>
-                        </ul>
-                        <p>Copyright&copy; 2019 Kyungeun_Chi. All rights reserved</p>
-                    </div>
+            </div>
+    </footer>
+    <footer id="Mfooter">
+            <div class="area">
+                <div class="footBox">
+                    <ul>
+                        <li class="insta"><a href="https://www.instagram.com/kyungeun_chi/?hl=ko" target="_blank"><img src="images/common/instaM.png" alt="인스타그램" width="30" height="28"></a></li>
+                        <li class="facebook"><a href="https://www.facebook.com/ruddmsdudeh" target="_blank"><img src="images/common/facebookM.png" alt="페이스북" width="14" height="30"></a></li>
+                        <li class="email"><a href="jke4460@naver.com" target="_blank"><img src="images/common/mailM.png" alt="이메일" width="37" height="24"></a></li>
+                    </ul>
+                    <p>Copyright&copy; 2019 Kyungeun_Chi.All rights reserved</p>
                 </div>
-        </footer>
+            </div>
+    </footer>
     </div>
 </body>
 </html>

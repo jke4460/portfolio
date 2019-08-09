@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/sub2.css">
+    <link rel="shortcut icon" href="images/common/pavicon.ico">
     <!--[if lt IE 9]>
         <script type="text/javascript" src="js/html5shiv.min.js"></script>
     <![endif]-->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="menu.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/sub.js"></script>
 </head>
 <body id="sub">
     <header id="header">
@@ -27,9 +29,9 @@
             </button>
             <nav id="gnb" class="menu-overlay">
                 <ul class="overlay-content">
-                    <li><a href="">HOME</a></li>
-                    <li><a href="sub1.html">POJECT</a></li>
-                    <li  class="on"><a href="">ABOUT ME</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="sub1.html">PROJECT</a></li>
+                    <li  class="on"><a href="sub2.html">ABOUT ME</a></li>
                 </ul>
                 <button id="closeBtn">
                     <img src="images/common/close.png" alt="메뉴닫기" width="28" height="28">
@@ -43,28 +45,63 @@
     <section id="content">
         <article id="cnt1">
             <div class="area">
-                <h3>About me</h3>
                 <div class="left">
-                    <p>코딩하는 웹디자이너, 지경은입니다.<br>
+                    <h3>About me</h3>
+                    <p class="txt">코딩하는 웹디자이너, <span>지경은</span>입니다.<br>
                         현재 어도비 일러스트레이터, 포토샵 xd 프로그램을 디자인 할때 사용하고,<br>
-                        visual studio, javascript, zeplin github, sass를 이용하여 웹페이지를 구현합니다.
+                        visual studio, javascript, zeplin github, sass를 이용하여 웹페이지를 제작합니다.
                     </p>
-                    <ul>
-                        <li>
-                            <img src="images/sub2/circle1.png" alt="visual studio code" width="90" height="90">
-                            <span>Visual Studio Code</span>
+                    <p class="info">아이콘에 마우스를 올려주세요</p>
+                    <ul class="icon">
+                        <li class="list1">
+                            <img src="images/sub2/circle5.png" alt="visual studio code" width="90" height="90">
+                            <span>photoshop</span>
+                            <p>디자인 작업부터 사진보정, 편집까지 할 수 있습니다.<br>라이트룸도 함께 사용하고 있습니다.</p>
                         </li>
-                        <li>
+                        <li class="list2">
+                            <img src="images/sub2/circle6.png" alt="visual studio code" width="90" height="90">
+                            <span>illusrator</span>
+                            <p>아이콘이나 로고 작업할 때 주로 사용해요.</p>
+                        </li>
+                        <li class="list3">
+                            <img src="images/sub2/circle7.png" alt="visual studio code" width="90" height="90">
+                            <span>Adobe XD</span>
+                            <p>어플리케이션 디자인 할 때 사용해봤습니다.<br>앞으로 더 공부해보고 싶은 프로그램입니다.</p>
+                        </li>
+                        <li class="list4 line">
+                            <img src="images/sub2/circle8.png" alt="html5" width="90" height="90">
+                            <span>html5</span>
+                            <p>html5의 기본문법 구성이나 웹표준들을 잘 숙지하고 있습니다.</p>
+                        </li>
+                        <li class="list4_1 line">
+                            <img src="images/sub2/circle9.png" alt="css" width="90" height="90">
+                            <span>css</span>
+                            <p>스크립트와 css를 적절하게 활용하여, 다양한 효과들을 줄 수 있습니다.</p>
+                        </li>
+                        <li class="list4_2 line">
+                            <img src="images/sub2/circle10.png" alt="java script" width="90" height="90">
+                            <span>java script</span>
+                            <p>스크립트와 css를 적절하게 활용하여, 다양한 효과들을 줄 수 있습니다.</p>
+                        </li>
+                        <li class="list4_3 line">
+                            <img src="images/sub2/circle11.png" alt="Bootstrap" width="90" height="90">
+                            <span>Bootstrap</span>
+                            <p>부트스트렙 소스를 가져와서 활용할 수 있습니다.</p>
+                        </li>
+                        <li class="list5 line">
                             <img src="images/sub2/circle2.png" alt="jquery" width="90" height="90">
                             <span>jquery</span>
+                            <p>간단한 스크립트나 효과들은 제이퀴리와 자바스크립트로 짤 수 있습니다.</p>
                         </li>
-                        <li>
+                        <li class="list6 line">
                             <img src="images/sub2/circle3.png" alt="Zeplin" width="90" height="90">
                             <span>Zeplin</span>
+                            <p>디자인 작업가지고 코딩할 때 제플린은 필수라죠?<br>코딩할때 편리해서 애용하는 프로그램입니다.</p>
                         </li>
-                        <li>
+                        <li class="list7 line">
                             <img src="images/sub2/circle4.png" alt="sass" width="90" height="90">
                             <span>Sass</span>
+                            <p>3차와 4차 프로젝트와 이 포트폴리오 css작업은 scss를 이용하여 구현했습니다.</p>
                         </li>
                     </ul>
                 </div>
@@ -94,34 +131,28 @@
         </article>
     </section>
     <footer id="footer">
-            <div class="area">
-                <a href="#main" class="footlogo">
-                    <img src="images/common/logo.png" alt="로고">
-                </a>
-                <div class="footBox">
-                    <ul>
-                        <li class="insta"><a href="https://www.instagram.com/kyungeun_chi/?hl=ko" target="_blank"><img src="images/common/insta.png" alt="인스타그램" width="19" height="18"></a></li>
-                        <li class="facebook"><a href="https://www.facebook.com/ruddmsdudeh" target="_blank"><img src="images/common/facebook.png" alt="페이스북" width="9" height="19"></a></li>
-                        <li class="email"><a href="jke4460@naver.com" target="_blank"><img src="images/common/mail.png" alt="이메일"></a></li>
-                    </ul>
-                    <p>Copyright© 2019 Kyungeun_Chi.<br>All rights reserved</p>
-                </div>
+        <div class="area">
+            <div class="footBox">
+                <ul>
+                    <li class="insta"><a href="https://www.instagram.com/kyungeun_chi/?hl=ko" target="_blank"><img src="images/common/insta.png" alt="인스타그램" width="19" height="18"></a></li>
+                    <li class="facebook"><a href="https://www.facebook.com/ruddmsdudeh" target="_blank"><img src="images/common/facebook.png" alt="페이스북" width="9" height="19"></a></li>
+                    <li class="email"><a href="jke4460@naver.com" target="_blank"><img src="images/common/mail.png" alt="이메일"></a></li>
+                </ul>
+                <p>Copyright© 2019 Kyungeun_Chi. All rights reserved</p>
             </div>
-    </footer>
-    <footer id="Mfooter">
-            <div class="area">
-                <a href="index.html" class="footlogo">
-                    <img src="images/common/logoM.png" alt="로고">
-                </a>
-                <div class="footBox">
-                    <ul>
-                        <li class="insta"><a href="https://www.instagram.com/kyungeun_chi/?hl=ko" target="_blank"><img src="images/common/instaM.png" alt="인스타그램" width="30" height="28"></a></li>
-                        <li class="facebook"><a href="https://www.facebook.com/ruddmsdudeh" target="_blank"><img src="images/common/facebookM.png" alt="페이스북" width="14" height="30"></a></li>
-                        <li class="email"><a href="jke4460@naver.com" target="_blank"><img src="images/common/mailM.png" alt="이메일" width="37" height="24"></a></li>
-                    </ul>
-                    <p>Copyright&copy; 2019 Kyungeun_Chi. All rights reserved</p>
-                </div>
+        </div>
+</footer>
+<footer id="Mfooter">
+        <div class="area">
+            <div class="footBox">
+                <ul>
+                    <li class="insta"><a href="https://www.instagram.com/kyungeun_chi/?hl=ko" target="_blank"><img src="images/common/instaM.png" alt="인스타그램" width="30" height="28"></a></li>
+                    <li class="facebook"><a href="https://www.facebook.com/ruddmsdudeh" target="_blank"><img src="images/common/facebookM.png" alt="페이스북" width="14" height="30"></a></li>
+                    <li class="email"><a href="jke4460@naver.com" target="_blank"><img src="images/common/mailM.png" alt="이메일" width="37" height="24"></a></li>
+                </ul>
+                <p>Copyright&copy; 2019 Kyungeun_Chi.All rights reserved</p>
             </div>
-    </footer>
+        </div>
+</footer>
 </body>
 </html>
