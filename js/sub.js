@@ -26,4 +26,14 @@ $(document).ready(function () {
         });
     }
     fadeIn ();
+    var $icon = $('#sub #content .icon li');
+    $icon.on({
+        mouseenter:function (){
+            $(this).addClass('on');
+        },
+        mouseleave:function(){
+            $(this).removeClass('on');
+        }
+    });
+   
 });
