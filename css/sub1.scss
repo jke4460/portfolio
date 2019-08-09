@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+/* gb(​ 255, ​ 179, ​ 41) */
 $activeColor: #ffb329;
 $navyColor: #101420;
 
@@ -9,13 +9,13 @@ $navyColor: #101420;
 @mixin posA {
     position: absolute;
 }
-@mixin  transition {
-    transition: all 0.8s
+@mixin  transition ($value) {
+    transition: $value;  //all 0.3s
 }
-@mixin radius{
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%
+@mixin radius($num){
+    -webkit-border-radius: $num;
+    -moz-border-radius: $num;
+    border-radius: $num
 }
 @mixin clear {
     content: "";
@@ -26,19 +26,14 @@ $navyColor: #101420;
     opacity: $num1;
     filter: Alpha(opacity=$num2);
 }
-
-@mixin opacity1 {
-    opacity: 1;filter: Alpha(100)
-}
-@mixin opacity0 {
-    opacity: 0;filter: Alpha(0)
-}
+.str{background-color: rgba($color: #ffb329, $alpha:0.3)}
+.str2{border-bottom: 1px solid $activeColor;padding-top: 1px}
 
 /* sub1 garden */
 #content #cnt1{
     background: url("../images/main/index3.jpg")no-repeat 0 center;margin-top: -70px;height: auto;color:#fff;
     .area{
-        width: 900px;padding: 270px 0;margin: auto 50%;margin-left:450px;
+        width: 900px;padding: 270px 0;margin: auto 25%;
         .txt{color: $activeColor;border-bottom:1px solid #fff;padding-bottom: 35px;
             h3{font-size: 70px}
             span{display:inline-block;font-size: 18px;font-family: monL;float: right;margin-top: -20px}
@@ -55,21 +50,26 @@ $navyColor: #101420;
     }
 }
 #content #cnt1 .fade.on{margin-bottom: 0px;@include opa(1,100)}
-#content #cnt1 .fade{margin-bottom: -50px;@include opa(0,0);@include transition}
+#content #cnt1 .fade{margin-bottom: -50px;@include opa(0,0);@include transition(all 0.5s)}
 #content #cnt1 .box ul .size:after{content: "";display: block;width: 40px;height: 1px;background: #fff;margin: 10px 0}
-#content #cnt1 .siteLink{text-align: center;display: block;width: 170px;height: 40px;line-height: 40px;border: 1px solid $activeColor;border-radius: 50px;margin: auto;@include transition}
-#content #cnt1 .siteLink:hover, #content #cnt1 .siteLink:focus{background: $activeColor;counter-reset: #fff;}
+#content #cnt1 .siteLink{text-align: center;display: block;width: 170px;height: 40px;line-height: 40px;border: 1px solid $activeColor;border-radius: 50px;margin: auto;@include transition(all 0.3s)}
+#content #cnt1 .siteLink:hover, #content #cnt1 .siteLink:focus{background: $activeColor;color: #fff;}
 #content .area h4, #content .area h5{display: inline-block}
 #content .area .num{font-family: monEB;font-size: 150px;color: $activeColor}
 #content .area .cntTit{font-family: monM;font-size: 25px;letter-spacing: -0.8px;margin-left: 45px;border-bottom: 1px solid $activeColor}
 #content .area .num.right, #content .area .cntTit.right{float: right}
 #content .bgfix{background: no-repeat fixed center}
-#content #cnt2{
+
+#content.garden #cnt2{
     background-image:url("../images/sub1/1_1.jpg");height: 900px;
-    p{font-size: 23px;line-height: 53.4px;font-family: notoR;margin-top: 300px;@include transition;@include opa(0,0)}
-    p.on{margin-top: 400px;@include opa(1,100)}
 }
-#content #cnt2_1{background-image: url("../images/sub1/1_2.jpg");height: 900px}
+#content #cnt2 .area{
+    p{font-size: 23px;line-height: 53.4px;font-family: notoR;margin-top: 100px;@include transition (all 0.8s);@include opa(0,0)}
+    p.on{margin-top: 40px;@include opa(1,100)}
+
+}
+
+#content.garden #cnt2_1{background-image: url("../images/sub1/1_2.jpg");height: 900px}
 #content #cnt3{
     position: relative;
     .num{position: absolute;right: 30px;top: -50px}
@@ -78,13 +78,13 @@ $navyColor: #101420;
 }
 #content .mainT{font-size: 18px;font-family: monL;margin-bottom: 27px}
 #content #cnt4{
-    height: 1000px;background: #f8f8f8;@include clear;
+    height: auto !important;background: #f8f8f8;@include clear;
     ul{text-align: center}
-    .color{display: inline-block;width: 130px;height: 130px;@include radius}
+    .color{display: inline-block;width: 130px;height: 130px;@include radius(50%)}
     .name{margin-top: 25px}
 }
-#content #cnt4 .mainColor .color{width: 190px;height: 190px;background-color: #235b42;@include radius}
-#content #cnt4 .container{height: 480px;margin-left: 240px}
+#content #cnt4 .mainColor .color{width: 190px;height: 190px;background-color: #235b42;@include radius(50%)}
+#content #cnt4 .container{height: 560px;margin-left: 240px}
 
 #content #cnt4 .color1{
     .mainColor{
@@ -98,31 +98,34 @@ $navyColor: #101420;
 
 #content #cnt4 .color2{display: inline-block;margin-left: 123px;margin-top: -50px}
 #content #cnt4 .color2 ul li{
-    height: 180px;
+    height: 200px;
     span{display: block}
 }
 #content #cnt4 .color2 .list2, #content #cnt4 .color2 .list3{margin-left: 74px}
 #content #cnt4 .color2 .subColor .list1 .color{background-color: #deead2}
 #content #cnt4 .color2 .subColor .list2 .color{background-color: #78191d}
 #content #cnt4 .color2 .subColor .list3 .color{background-color: #ffffff;border: 1px solid #ccc;}
-#content #cnt4 .color2 .font .list1 .color{background-color: #303030}
-#content #cnt4 .color2 .font .list2 .color{background-color: #cccccc}
-
+#content #cnt4 .color2 .fontColor .list1 .color{background-color: #333333}
+#content #cnt4 .color2 .fontColor .list2 .color{background-color: #cccccc}
+#content .font{height: 150px;}
 #content #cnt4{
-    .container .cntTit.box{margin-left: 0;margin-bottom: 25px}
+    .container .cntTit.box{margin-left: 0;margin-bottom: 40px}
     .noto{font-family: notoR;font-weight: bold;font-size: 20px}
     .font{
         font-family: notoR;
-        li{text-align: left;margin-top: 30px;line-height: 36px;}
+        li{text-align: left;line-height: 33px;}
         .font1{font-family: notoT}
         .font3{font-family: notoB}
         .font2, .font3{margin-left: 100px}
     }
 }
+
 #content #cnt5{
     position: relative;height: 1000px;background: $navyColor;color:#fff;
     .cntTit{color: #fff;margin-top: 120px;margin-left: 0;margin-right: 45px}
     .sliderWrap{position: absolute;top:171px;left:50%;margin-left:-390px;width: 1010px;height: 604px;padding-top: 58px;padding-left: 40px;padding-bottom: 85px;background:  url("../images/sub1/tablet.png")no-repeat}
+    .siteLink{position: absolute;bottom: 130px;right: 25%;text-align: center;width: 170px;height: 40px;line-height: 40px;border: 1px solid $activeColor;border-radius: 50px;@include transition(all 0.3s)}
+    .siteLink:hover, #content #cnt1 .siteLink:focus{background: $activeColor;color: #fff;}
 }
 #slider, #slider .visual li{width: 1050px;height: 604px;}
 #slider .visual, .control{position: absolute}
@@ -138,15 +141,18 @@ $navyColor: #101420;
     height: 65px;background:$navyColor;color: $activeColor;font-size:20px;padding-bottom:100px;text-align: center;padding-left:32%;
     li{
         float: left;margin-left:73px;
-        a{display: inline-block;@include opa(0.4,40);width: 40px;height: 65px;line-height: 65px;}
+        a{display: inline-block;@include opa(0.4,40);width: 40px;height: 65px;line-height: 65px;@include transition(all 0.3s)}
     }
 }
 .page li.on a{@include opa(1,100);font-size: 22px;border-bottom: 1px solid $activeColor}
+.page li:hover a, .page li a:focus{@include opa(1,100)}
 
 /* belle */
 #content.belle #cnt1{background-image: url("../images/main/index2.jpg")}
-#content.belle #cnt2{background-image:url("../images/sub1/3_1.jpg")}
-#content #cnt2_1{background-image: url("../images/sub1/3_2.jpg")}
+#content.belle #cnt2{
+    background-image:url("../images/sub1/3_1.jpg");height: 900px;
+}
+#content.belle #cnt2_1{background-image: url("../images/sub1/3_2.jpg");height: 900px;}
 #content.belle #cnt4 .mainColor .color{background-color: #750f15;}
 #content.belle #cnt4 .color2 .list2, #content #cnt4 .color2 .list3{margin-left: 74px}
 #content.belle #cnt4 .color2 .subColor .list1 .color{background-color: #f8e7d3}
@@ -154,3 +160,31 @@ $navyColor: #101420;
 #content.belle #cnt4 .color2 .subColor .list3 .color{background-color: #ffffff;border: 1px solid #ccc;}
 #content.belle #cnt4 .color2 .font .list1 .color{background-color: #333333}
 #content.belle #cnt4 .color2 .font .list2 .color{background-color: #cccccc}
+#content.belle #cnt4 .container .ser{font-family: notoSeR}
+#content.belle #cnt4 .container .font.ser{
+    .font2.ser{font-family: notoSeB}
+}
+
+/* blink */
+#content.blink #cnt1{background-image: url("../images/main/index1.jpg")}
+#content.blink #cnt2{
+    background-image:url("../images/sub1/2_2.jpg");height: 900px;
+}
+#content.blink #cnt2_1{background-image: url("../images/sub1/2_1.jpg");height: 900px;}
+#content.blink #cnt4 .mainColor .color{background-color: #ccd9d1;}
+#content.blink #cnt4 .color2 .subColor .list1 .color{background-color: #2a2d40}
+#content.blink #cnt4 .color2 .subColor .list2 .color{background-color: #462673}
+#content.blink #cnt4 .color2 .subColor .list3 .color{background-color: #f2695c;}
+#content.blink #cnt4 .color2 .fontColor .list1 .color{background-color: #0d0d0d}
+#content.blink #cnt4 .color2 .fontColor .list2 .color{background-color: #f2f2f2;border: 1px solid #ccc;}
+
+#content.blink #cnt4 .noto.ser{font-family:notoSeR}
+#content.blink #cnt4 .font.ser .font2{font-family:notoSeB}
+
+
+/* app version */
+#content.app #cnt1{background-image: url("../images/main/index4.jpg")}
+#content.app #cnt2{
+    background-image:url("../images/sub1/4_2.jpg");height: 800px;
+}
+#content.app #cnt2_1{background-image: url("../images/sub1/4_1.jpg");height: 800px;}

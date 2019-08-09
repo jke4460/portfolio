@@ -16,6 +16,8 @@ $navyColor: #101420;
     opacity: $num1;
     filter: Alpha(opacity=$num2);
 }
+
+
 /* content */
 html, body, #content, .wrap{height: 100%;}
 body{overflow: hidden;background: #000}
@@ -27,27 +29,6 @@ body{overflow: hidden;background: #000}
         @include posA;top: 30px;right: 160px;margin-top: 8px;
     }
 }
-#menuBtn:after{content: "";@include posA;top: -8px;right: -4px;width: 42px;height: 42px;border-radius: 50%;background-color: $navyColor;z-index: -10;@include opa(0, 0);filter: Alpha(0);@include transition(all 0.3s)}
-
-#menuBtn.on:after{@include opa(1, 100);filter: Alpha(100);transform: scale(1.5)}
-
-#gnb{
-    @include posA;top: 0;bottom: 0;left: 0;right: 0;height: 1000px;background-color: $navyColor;color: #fff;font-family: monEB;font-size: 90px;z-index: 1000;display:none;
-    ul{
-        width: 700px;margin: 140px auto;
-        li{
-            margin-bottom: 100px;
-            a{color: fff;@include transition(all 0.3s)}
-            a:hover, a:focus{color: $activeColor}
-        }
-    }
-    #closeBtn{@include posA;top: 30px;right: 160px}
-    #McloseBtn{display: none}
-}
-
-#gnb ul li.on a{color: $activeColor}
-#gnb ul li a:before{content: "";display: inline-block;width: 90px;height: 1px;background: $activeColor;margin-bottom: 32.5px;display: none;margin-left: -90px}
-#gnb ul li.on a:before{display: inline-block}
 
 #indicator{
     position: fixed;right:0px;top:50%;margin-top:-100px;width: 50px;z-index: 900;
@@ -73,7 +54,7 @@ body{overflow: hidden;background: #000}
     &.selected{padding-left: 10%;color: $activeColor;@include opa(1, 100);}
     &#cnt3 .title.area{top: 15%;}
     h3, span{color: $activeColor}
-    a{@include posA;top: 50%;right: 0; padding-left: 70px}
+    .arrow{@include posA;top: 50%;right: 0; padding-left: 70px}
     h3{font-family: monM;font-size: 70px;letter-spacing: -1.4px;display: inline-block}
     span{letter-spacing: -0.4px}
     .sub_title{font-size: 15px}
@@ -85,21 +66,3 @@ body{overflow: hidden;background: #000}
 #content #cnt3 .sub_title{padding-left: 147px}
 #content #cnt4 .sub_title{padding-left: 108px}
 
-/* footer */
-#footer{
-    color: #fff;font-size: 12px;height: 130px;width: 100%;position: fixed;bottom:0;
-    .area{margin-left: 460px;margin-right: 460px;padding-top: 60px}
-    .footBox{float: right;}
-    ul{
-        margin-left: 93px;margin-bottom: 6px;height: 20px;
-        li{float: left}
-        a{@include transition(all 0.3s)}
-        .insta{background-image: url("../images/common/insta_bg.png")}
-        .facebook{margin-left: 26px;background-image: url("../images/common/facebook_bg.png")}
-        .email{margin-left: 23px;background-image: url("../images/common/mail_bg.png")}
-    }
-    p{display: inline-block}
-}
-#footer ul li a:hover, #footer ul li a:focus{opacity: 0;filter: Alpha(0)} 
-/* footer */
-#Mfooter{display: none}

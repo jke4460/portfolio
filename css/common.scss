@@ -32,6 +32,23 @@
     url("../font/Montserrat-Light.ttf") format("truetype")
 }
 @font-face{
+  font-family:notoT;
+  src: url("../font/NotoSansKR-Thin.otf.eot");
+  src: local("※"),
+  url("../font/NotoSansKR-Thin.woff2") format("woff2"),
+  url("../font/NotoSansKR-Thin.woff") format("woff"),
+  url("../font/NotoSansKR-Thin.otf") format("opentype"),
+}
+@font-face{
+  font-family:notoL;
+  src: url("../font/NotoSansKR-Light.eot");
+  src: local("※"),
+  url("../font/NotoSansKR-Light.woff2") format("woff2"),
+  url("../font/NotoSansKR-Light.woff") format("woff"),
+  url("../font/NotoSansKR-Light.otf") format("opentype"),
+}
+
+@font-face{
     font-family:notoR;
     src: url("../font/NotoSansKR-Regular.eot");
     src: local("※"),
@@ -40,20 +57,38 @@
     url("../font/NotoSansKR-Regular.otf") format("opentype"),
 }
 @font-face{
-    font-family:notoT;
-    src: url("../fonT/NotoSansKR-Thin.otf.eot");
-    src: local("※"),
-    url("../font/NotoSansKR-Thin.woff2") format("woff2"),
-    url("../font/NotoSansKR-Thin.woff") format("woff"),
-    url("../font/NotoSansKR-Thin.otf") format("opentype"),
-}
-@font-face{
     font-family:notoB;
-    src: url("../fonT/NotoSansKR-Bold.eot");
+    src: url("../font/NotoSansKR-Bold.eot");
     src: local("※"),
     url("../font/NotoSansKR-Bold.woff2") format("woff2"),
     url("../font/NotoSansKR-Bold.woff") format("woff"),
     url("../font/NotoSansKR-Bold.otf") format("opentype"),
+}
+
+@font-face{
+    font-family:notoSeR;
+    src: url("../font/NotoSerif-Regular.eot");
+    src: local("※"),
+    url("../font/NotoSerif-Regular.woff2") format("woff2"),
+    url("../font/NotoSerif-Regular.woff") format("woff"),
+    url("../font/NotoSerif-Regular.otf") format("opentype"),
+}
+
+@font-face{
+    font-family:notoSeB;
+    src: url("../font/NotoSerif-Bold.eot");
+    src: local("※"),
+    url("../font/NotoSerif-Bold.woff2") format("woff2"),
+    url("../font/NotoSerif-Bold.woff") format("woff"),
+    url("../font/NotoSerif-Bold.otf") format("opentype"),
+}
+@font-face{
+    font-family:nanumB;
+    src: url("../font/NanumBrushScript-Regular.eot");
+    src: local("※"),
+    url("../font/NanumBrushScript-Regular.woff2") format("woff2"),
+    url("../font/NanumBrushScript-Regular.woff") format("woff"),
+    url("../font/NanumBrushScript-Regular.ttf") format("truetype"),
 }
 
 /* tag reset */
@@ -77,11 +112,17 @@ $navyColor: #101420;
 @mixin posA {
     position: absolute;
 }
-@mixin  transition {
-    transition: all 0.3s
+@mixin  transition($value) {
+  transition: $value;  //all 0.3s
 }
+@mixin opa($num1, $num2) {
+  opacity: $num1;
+  filter: Alpha(opacity=$num2);
+}
+
+
 /* content */
-html, body, #content, .wrap{height: 100%;}
+
 .area{margin: 0 160px;}
 #header{
     width: 100%;padding-top: 30px;position: fixd;@include posR;
@@ -90,64 +131,36 @@ html, body, #content, .wrap{height: 100%;}
         @include posA;top: 30px;right: 160px;margin-top: 8px;
     }
 }
+#menuBtn:after{content: "";@include posA;top: -8px;right: -4px;width: 42px;height: 42px;border-radius: 50%;background-color:$navyColor;z-index: -10;@include opa(0, 0);filter: Alpha(0);@include transition(all 0.3s)}
 
-
-#menuBtn.on:after{opacity: 1;filter: Alpha(100);transform: scale(1.5)}
-
+#menuBtn.on:after{@include opa(0.3, 30);filter: Alpha(100);transform: scale(1.5)}
 
 #gnb{
-    @include posA;top: 0;bottom: 0;left: 0;right: 0;height: 1000px;background-color: $navyColor;color: #fff;font-family: monEB;font-size: 90px;z-index: 1000;display:none;
-    ul{
-        width: 700px;margin: 140px auto;
-        li{margin-bottom: 100px;}
-    }
-    #closeBtn{@include posA;top: 30px;right: 160px}
-    #McloseBtn{display: none}
+  @include posA;top: 0;bottom: 0;left: 0;right: 0;height: 1000px;background-color: $navyColor;color: #fff;font-family: monEB;font-size: 90px;z-index: 1000;display:none;@include transition(all 0.3s);
+  ul{
+      width: 700px;margin: 140px auto;text-align:left;
+      li{
+          margin-bottom: 100px;
+          a{color: fff;@include transition(all 0.3s)}
+          a:hover, a:focus{color: $activeColor}
+      }
+  }
+  #closeBtn{@include posA;top: 30px;right: 160px}
+  #McloseBtn{display: none}
 }
 
-.menu-circle {
-    pointer-events: none;
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid rgba(0, 0, 0, 0);
-    width: 100%;
-    height: 100%;
-    left: -1px;
-    bottom: -2px;
-    position: absolute;
-    border-radius: 50%;
-    z-index: 800;
-    opacity: 0.2;
-    transform: scale(1);
-    transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    -webkit-box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.05);
-    -moz-box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.05);
-    box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.05);
-  }
+
+.menu-circle {pointer-events: none;background-color: rgba(0, 0, 0, 0);border: 2px solid rgba(0, 0, 0, 0);width: 100%;height: 100%;left: -1px;
+    bottom: -2px;position: absolute;border-radius: 50%;z-index: 800;@include opa(0.2, 20);transform: scale(1);
+    transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);-webkit-box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.05);-moz-box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.05);box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.05);}
   
-  .menu-pulse {
-    border: 2px solid white;
-    border-radius: 50%;
-    position: absolute;
-    display: block;  
-    width: inherit;
-    height: inherit;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    box-sizing: content-box;
-    opacity: 0;
-    
+  .menu-pulse {border: 2px solid white;border-radius: 50%;position: absolute;display: block;  width: 100%;height:100%;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);box-sizing: content-box;@include opa(0,0);
     &.is-learned {
       visibility: hidden;
     }
   } 
-  
-  .first-pulse {
-    animation: pulse-border 2000ms ease-out infinite;
-  }
-  .second-pulse {
-    animation: pulse-border 2000ms 400ms ease-out infinite;
-  }
+  .first-pulse {animation: pulse-border 2000ms ease-out infinite;}
+  .second-pulse {animation: pulse-border 2000ms 400ms ease-out infinite;}
   
   @keyframes pulse-border {
     0% {
@@ -168,70 +181,47 @@ html, body, #content, .wrap{height: 100%;}
     }
   }
   
-  .menu-toggle:hover .menu-circle {
-    background-color: $navyColor;
-    border: 2px solid $navyColor;
-    opacity: 1;
-    transform: scale(0.8);
-    transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
-  
-    -webkit-box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.1);
-    -moz-box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.1);
-    box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.1);
-  }
-  
+  .menu-toggle:hover .menu-circle {background-color: $navyColor;border: 2px solid $navyColor;@include opa(1,100);transform: scale(0.8);
+    transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);-webkit-box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.1);-moz-box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.1);box-shadow: 0px 0px 32px 0px rgba(22,24,58,0.1);}
+
   .menu-toggle.menu-open .menu-circle {
-    transform: scale(25);
-    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1), opacity 800ms cubic-bezier(0.19, 1, 0.22, 1);
-    opacity: 0;
+    transform: scale(25);transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1), opacity 800ms cubic-bezier(0.19, 1, 0.22, 1);@include opa(0,0);
   }
   
   /* ------ Menu Overlay ------- */
-  .menu-overlay {
-    background-color: #fff;
-    color: #333;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    text-align: center;
-    transition: opacity 0.2s ease-in-out;
-    z-index: 800;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.menu-overlay {background-color: #fff;
+    color: $activeColor;height: 100%;width: 100%;position: fixed;text-align: center;transition: opacity 0.2s ease-in-out;z-index: 800;
+    opacity: 0;visibility: hidden;display: flex;flex-direction: column;justify-content: center;align-items: center;}
   
-  .menu-overlay.menu-open {
-    opacity: 1;
-    visibility: visible;
-    left: 0px;
-    top: 0;
-  }
-
+.menu-overlay.menu-open {@include opa (1,100);visibility: visible;left: 0px;top: 0;}
 #gnb ul li.on a{color: $activeColor}
 #gnb ul li a:before{content: "";display: inline-block;width: 90px;height: 1px;background: $activeColor;margin-bottom: 32.5px;display: none;margin-left: -90px}
 #gnb ul li.on a:before{display: inline-block}
 /* footer */
+
+#main #footer{position: fixed}
 #footer{
-    color: #fff;font-size: 12px;height: 130px;width: 100%;position: fixed;bottom:0;opacity: 0.5;filter: Alpha(50);
-    .area{
-      margin-left: 460px;margin-right: 460px;padding-top: 60px;
-    }
+    color: #fff;font-size: 12px;height: 100px;width: 100%;bottom:0;@include opa(0.5, 50);
+    .area{padding-top: 60px}
     .footBox{float: right;}
     ul{
-        margin-left: 93px;margin-bottom: 6px;height: 20px;
+        float :right;margin-left: 36px;height: 20px;
         li{float: left}
-        a{@include transition}
+        a{@include transition(all 0.2s)}
         .insta{background-image: url("../images/common/insta_bg.png")}
         .facebook{margin-left: 26px;background-image: url("../images/common/facebook_bg.png")}
         .email{margin-left: 23px;background-image: url("../images/common/mail_bg.png")}
     }
     p{display: inline-block}
 }
-#footer ul li a:hover, #footer ul li a:focus{opacity: 0;filter: Alpha(0)} 
+#footer ul li a:hover, #footer ul li a:focus{@include opa(0,0)} 
 /* footer */
 #Mfooter{display: none}
+
+/* footer */
+#sub #footer{
+  background: $navyColor;@include opa(1,100)
+}
+
+/* footer */
 

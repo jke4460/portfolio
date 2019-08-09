@@ -22,73 +22,6 @@ body {
     right: 160px;
     margin-top: 8px; }
 
-#menuBtn:after {
-  content: "";
-  position: absolute;
-  top: -8px;
-  right: -4px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background-color: #101420;
-  z-index: -10;
-  opacity: 0;
-  filter: Alpha(opacity=0);
-  filter: Alpha(0);
-  transition: all 0.3s; }
-
-#menuBtn.on:after {
-  opacity: 1;
-  filter: Alpha(opacity=100);
-  filter: Alpha(100);
-  transform: scale(1.5); }
-
-#gnb {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1000px;
-  background-color: #101420;
-  color: #fff;
-  font-family: monEB;
-  font-size: 90px;
-  z-index: 1000;
-  display: none; }
-  #gnb ul {
-    width: 700px;
-    margin: 140px auto; }
-    #gnb ul li {
-      margin-bottom: 100px; }
-      #gnb ul li a {
-        color: fff;
-        transition: all 0.3s; }
-      #gnb ul li a:hover, #gnb ul li a:focus {
-        color: #ffb329; }
-  #gnb #closeBtn {
-    position: absolute;
-    top: 30px;
-    right: 160px; }
-  #gnb #McloseBtn {
-    display: none; }
-
-#gnb ul li.on a {
-  color: #ffb329; }
-
-#gnb ul li a:before {
-  content: "";
-  display: inline-block;
-  width: 90px;
-  height: 1px;
-  background: #ffb329;
-  margin-bottom: 32.5px;
-  display: none;
-  margin-left: -90px; }
-
-#gnb ul li.on a:before {
-  display: inline-block; }
-
 #indicator {
   position: fixed;
   right: 0px;
@@ -162,7 +95,7 @@ body {
     top: 15%; }
   #content .wrap > div h3, #content .wrap > div span {
     color: #ffb329; }
-  #content .wrap > div a {
+  #content .wrap > div .arrow {
     position: absolute;
     top: 50%;
     right: 0;
@@ -191,46 +124,5 @@ body {
 
 #content #cnt4 .sub_title {
   padding-left: 108px; }
-
-/* footer */
-#footer {
-  color: #fff;
-  font-size: 12px;
-  height: 130px;
-  width: 100%;
-  position: fixed;
-  bottom: 0; }
-  #footer .area {
-    margin-left: 460px;
-    margin-right: 460px;
-    padding-top: 60px; }
-  #footer .footBox {
-    float: right; }
-  #footer ul {
-    margin-left: 93px;
-    margin-bottom: 6px;
-    height: 20px; }
-    #footer ul li {
-      float: left; }
-    #footer ul a {
-      transition: all 0.3s; }
-    #footer ul .insta {
-      background-image: url("../images/common/insta_bg.png"); }
-    #footer ul .facebook {
-      margin-left: 26px;
-      background-image: url("../images/common/facebook_bg.png"); }
-    #footer ul .email {
-      margin-left: 23px;
-      background-image: url("../images/common/mail_bg.png"); }
-  #footer p {
-    display: inline-block; }
-
-#footer ul li a:hover, #footer ul li a:focus {
-  opacity: 0;
-  filter: Alpha(0); }
-
-/* footer */
-#Mfooter {
-  display: none; }
 
 /*# sourceMappingURL=style.css.map */

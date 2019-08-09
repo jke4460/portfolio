@@ -1,3 +1,12 @@
+@charset "UTF-8";
+/* gb(​ 255, ​ 179, ​ 41) */
+.str {
+  background-color: rgba(255, 179, 41, 0.3); }
+
+.str2 {
+  border-bottom: 1px solid #ffb329;
+  padding-top: 1px; }
+
 /* sub1 garden */
 #content #cnt1 {
   background: url("../images/main/index3.jpg") no-repeat 0 center;
@@ -7,8 +16,7 @@
   #content #cnt1 .area {
     width: 900px;
     padding: 270px 0;
-    margin: auto 50%;
-    margin-left: 450px; }
+    margin: auto 25%; }
     #content #cnt1 .area .txt {
       color: #ffb329;
       border-bottom: 1px solid #fff;
@@ -49,7 +57,7 @@
   margin-bottom: -50px;
   opacity: 0;
   filter: Alpha(opacity=0);
-  transition: all 0.8s; }
+  transition: all 0.5s; }
 
 #content #cnt1 .box ul .size:after {
   content: "";
@@ -68,11 +76,11 @@
   border: 1px solid #ffb329;
   border-radius: 50px;
   margin: auto;
-  transition: all 0.8s; }
+  transition: all 0.3s; }
 
 #content #cnt1 .siteLink:hover, #content #cnt1 .siteLink:focus {
   background: #ffb329;
-  counter-reset: #fff; }
+  color: #fff; }
 
 #content .area h4, #content .area h5 {
   display: inline-block; }
@@ -95,23 +103,24 @@
 #content .bgfix {
   background: no-repeat fixed center; }
 
-#content #cnt2 {
+#content.garden #cnt2 {
   background-image: url("../images/sub1/1_1.jpg");
   height: 900px; }
-  #content #cnt2 p {
-    font-size: 23px;
-    line-height: 53.4px;
-    font-family: notoR;
-    margin-top: 300px;
-    transition: all 0.8s;
-    opacity: 0;
-    filter: Alpha(opacity=0); }
-  #content #cnt2 p.on {
-    margin-top: 400px;
-    opacity: 1;
-    filter: Alpha(opacity=100); }
 
-#content #cnt2_1 {
+#content #cnt2 .area p {
+  font-size: 23px;
+  line-height: 53.4px;
+  font-family: notoR;
+  margin-top: 100px;
+  transition: all 0.8s;
+  opacity: 0;
+  filter: Alpha(opacity=0); }
+#content #cnt2 .area p.on {
+  margin-top: 40px;
+  opacity: 1;
+  filter: Alpha(opacity=100); }
+
+#content.garden #cnt2_1 {
   background-image: url("../images/sub1/1_2.jpg");
   height: 900px; }
 
@@ -134,7 +143,7 @@
   margin-bottom: 27px; }
 
 #content #cnt4 {
-  height: 1000px;
+  height: auto !important;
   background: #f8f8f8;
   content: "";
   display: block;
@@ -160,7 +169,7 @@
   border-radius: 50%; }
 
 #content #cnt4 .container {
-  height: 480px;
+  height: 560px;
   margin-left: 240px; }
 
 #content #cnt4 .color1 .mainColor {
@@ -177,7 +186,7 @@
   margin-top: -50px; }
 
 #content #cnt4 .color2 ul li {
-  height: 180px; }
+  height: 200px; }
   #content #cnt4 .color2 ul li span {
     display: block; }
 
@@ -194,15 +203,18 @@
   background-color: #ffffff;
   border: 1px solid #ccc; }
 
-#content #cnt4 .color2 .font .list1 .color {
-  background-color: #303030; }
+#content #cnt4 .color2 .fontColor .list1 .color {
+  background-color: #333333; }
 
-#content #cnt4 .color2 .font .list2 .color {
+#content #cnt4 .color2 .fontColor .list2 .color {
   background-color: #cccccc; }
+
+#content .font {
+  height: 150px; }
 
 #content #cnt4 .container .cntTit.box {
   margin-left: 0;
-  margin-bottom: 25px; }
+  margin-bottom: 40px; }
 #content #cnt4 .noto {
   font-family: notoR;
   font-weight: bold;
@@ -211,8 +223,7 @@
   font-family: notoR; }
   #content #cnt4 .font li {
     text-align: left;
-    margin-top: 30px;
-    line-height: 36px; }
+    line-height: 33px; }
   #content #cnt4 .font .font1 {
     font-family: notoT; }
   #content #cnt4 .font .font3 {
@@ -241,6 +252,20 @@
     padding-left: 40px;
     padding-bottom: 85px;
     background: url("../images/sub1/tablet.png") no-repeat; }
+  #content #cnt5 .siteLink {
+    position: absolute;
+    bottom: 130px;
+    right: 25%;
+    text-align: center;
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ffb329;
+    border-radius: 50px;
+    transition: all 0.3s; }
+  #content #cnt5 .siteLink:hover, #content #cnt5 #content #cnt1 .siteLink:focus {
+    background: #ffb329;
+    color: #fff; }
 
 #slider, #slider .visual li {
   width: 1050px;
@@ -295,7 +320,8 @@
       filter: Alpha(opacity=40);
       width: 40px;
       height: 65px;
-      line-height: 65px; }
+      line-height: 65px;
+      transition: all 0.3s; }
 
 .page li.on a {
   opacity: 1;
@@ -303,15 +329,21 @@
   font-size: 22px;
   border-bottom: 1px solid #ffb329; }
 
+.page li:hover a, .page li a:focus {
+  opacity: 1;
+  filter: Alpha(opacity=100); }
+
 /* belle */
 #content.belle #cnt1 {
   background-image: url("../images/main/index2.jpg"); }
 
 #content.belle #cnt2 {
-  background-image: url("../images/sub1/3_1.jpg"); }
+  background-image: url("../images/sub1/3_1.jpg");
+  height: 900px; }
 
-#content #cnt2_1 {
-  background-image: url("../images/sub1/3_2.jpg"); }
+#content.belle #cnt2_1 {
+  background-image: url("../images/sub1/3_2.jpg");
+  height: 900px; }
 
 #content.belle #cnt4 .mainColor .color {
   background-color: #750f15; }
@@ -334,5 +366,60 @@
 
 #content.belle #cnt4 .color2 .font .list2 .color {
   background-color: #cccccc; }
+
+#content.belle #cnt4 .container .ser {
+  font-family: notoSeR; }
+
+#content.belle #cnt4 .container .font.ser .font2.ser {
+  font-family: notoSeB; }
+
+/* blink */
+#content.blink #cnt1 {
+  background-image: url("../images/main/index1.jpg"); }
+
+#content.blink #cnt2 {
+  background-image: url("../images/sub1/2_2.jpg");
+  height: 900px; }
+
+#content.blink #cnt2_1 {
+  background-image: url("../images/sub1/2_1.jpg");
+  height: 900px; }
+
+#content.blink #cnt4 .mainColor .color {
+  background-color: #ccd9d1; }
+
+#content.blink #cnt4 .color2 .subColor .list1 .color {
+  background-color: #2a2d40; }
+
+#content.blink #cnt4 .color2 .subColor .list2 .color {
+  background-color: #462673; }
+
+#content.blink #cnt4 .color2 .subColor .list3 .color {
+  background-color: #f2695c; }
+
+#content.blink #cnt4 .color2 .fontColor .list1 .color {
+  background-color: #0d0d0d; }
+
+#content.blink #cnt4 .color2 .fontColor .list2 .color {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc; }
+
+#content.blink #cnt4 .noto.ser {
+  font-family: notoSeR; }
+
+#content.blink #cnt4 .font.ser .font2 {
+  font-family: notoSeB; }
+
+/* app version */
+#content.app #cnt1 {
+  background-image: url("../images/main/index4.jpg"); }
+
+#content.app #cnt2 {
+  background-image: url("../images/sub1/4_2.jpg");
+  height: 800px; }
+
+#content.app #cnt2_1 {
+  background-image: url("../images/sub1/4_1.jpg");
+  height: 800px; }
 
 /*# sourceMappingURL=sub1.css.map */

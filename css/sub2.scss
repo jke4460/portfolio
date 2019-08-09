@@ -9,49 +9,111 @@ $navyColor: #101420;
 @mixin posA {
     position: absolute;
 }
-@mixin  transition {
-    transition: all 0.3s
+@mixin  transition ($value) {
+    transition: $value;  //all 0.3s
 }
-@mixin radius{
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%
+@mixin radius($num){
+    -webkit-border-radius: $num;
+    -moz-border-radius: $num;
+    border-radius: $num
 }
 @mixin clear {
     content: "";
     display: block;
     clear: both
 }
+@mixin opa($num1, $num2) {
+    opacity: $num1;
+    filter: Alpha(opacity=$num2);
+}
+@mixin clearfix {
+  content: "";
+  display: block;
+  clear: both;
+}
+body{width: 100%;height: 100%;overflow: hidden;}
 #cnt1 .area{
-  overflow: hidden;
+  height: 770px;
   .left, .right{display: inline-block}
   .right{float: right}
   .left{float: left}
-  h3{font-size: 70px;margin: 50px 0}
-  p{margin-bottom: 150px;font-family: notoT;font-size: 18px;line-height: 36px}
-  ul{
-    li{float: left;border-bottom: 1px solid $activeColor;padding-left:30px;
-      img{position: relative;border: 1px solid #ccc;border-radius: 50%}
+  h3{font-size: 70px;display: inline-block;margin: 30px 0}
+  .txt{display: inline-block;margin-bottom: 150px;font-family: notoT;font-size: 16px;line-height: 34px;width: 80%}
+  .icon{
+    &:after{@include clearfix};position: relative;
+    li:hover img{@include opa(0,0)}
+    li{float: left;padding-left:30px;text-align: center;
+      img{position: relative;@include transition(all 0.2s);}
       span{display: block;text-align: center;margin: 30px 0}
+      p{display: inline-block;position: absolute;text-align: left;font-size: 20px;font-family: nanumB;line-height: auto;font-weight: 500;bottom: 255px;@include opa(0,0);@include transition(all 0.2s)}
     }
   }
 }
-#cnt1 .area h3:after{content: "";display: block;width: 355px;height: 1px;background: $activeColor;}
-#cnt1 .area ul li:nth-child(1){
-  padding-left: 0;
-  img{margin-left: 35px}
+
+#cnt1 .area .left p span{background-color:  $activeColor}
+#cnt1 .area .info{animation: ani 1s infinite;margin: 0;margin-bottom: 50px;font-size: 13px;color: #aaa}
+#cnt1 .area .icon .line img{border: 1px solid #ccc;background-color: #fff;border-radius: 50%}
+#cnt1 .area .icon{
+  .list1{
+    background: url("../images/sub2/circle5_bg.png")no-repeat 100% 0%;padding-left:0;
+    p{left:10px}
+
+  }
+  .list2{
+    background: url("../images/sub2/circle6_bg.png")no-repeat 100% 0%;
+    p{left: 20px}
+  }
+  .list3{
+    background: url("../images/sub2/circle7_bg.png")no-repeat 100% 0%;
+    p{left: 80px;}
+  }
+  .list4{
+    background: url("../images/sub2/circle8_bg.png")no-repeat 96% 1%;
+  }
+  .list4_1{
+    background: url("../images/sub2/circle9_bg.png")no-repeat 96% 1%;
+  }
+  .list4_2{
+    background: url("../images/sub2/circle10_bg.png")no-repeat 96% 1%;
+  }
+  .list4_3{
+    background: url("../images/sub2/circle11_bg.png")no-repeat 96% 1%;
+  }
+  .list5{
+    background: url("../images/sub2/circle2_bg.png")no-repeat 96% 1%;
+    p{right: -60px}
+  }
+  .list6{
+    background: url("../images/sub2/circle3_bg.png")no-repeat 96% 1%;
+    p{right: 40px;}
+  }
+  .list7{
+    background: url("../images/sub2/circle4_bg.png")no-repeat 96% 1%;
+    p{right: 30px}
+  }
 }
+#cnt1 .area .icon li.on p{@include opa(1,100)}
 
 
-/* cube */
-.scene-hero {height: 200px;margin: 40px 300px;perspective: 500px;border: none;}
-.cube {width: 200px;height: 200px;position: relative;transform-style: preserve-3d;transform: translateZ(-100px);}
+
+#cnt1 .area h3:after{content: "";display: block;width: 355px;height: 1px;background: $activeColor;}
+
+
+
+/* cube  margin: 25px 100px;margin-top: 100px;margin-right: 70px;*/
+.scene-hero {height: 100px;perspective: 500px;border: none;position: absolute;top: 180px;right: 560px}
+.cube {width: 100px;height: 100px;position: relative;transform-style: preserve-3d;transform: translateZ(-100px);}
 .cube-hero {margin: 0 auto;}
 .cube.is-spinning {animation: spinCube 10s infinite ease-in-out;}
   
 @keyframes spinCube {
     0% { transform: translateZ(-100px) rotateX(  0deg) rotateY(  0deg); }
   100% { transform: translateZ(-100px) rotateX(360deg) rotateY(360deg); }
+}
+@keyframes ani {
+  0% { @include opa(0.4,40); }
+  50% { @include opa(1,100);}
+  100% { @include opa(0.4,40); }
 }
 .cube_face {position: absolute;width: 200px;height: 200px;}
 .cube.is-backface-hidden .cube_face {backface-visibility: hidden;}
