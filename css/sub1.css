@@ -376,6 +376,10 @@
 /* blink */
 #content.blink #cnt1 {
   background-image: url("../images/main/index1.jpg"); }
+  #content.blink #cnt1 .siteLink {
+    float: left; }
+  #content.blink #cnt1 .siteLink.link1, #content.blink #cnt1 .siteLink.link2 {
+    margin-left: 192px; }
 
 #content.blink #cnt2 {
   background-image: url("../images/sub1/2_2.jpg");
